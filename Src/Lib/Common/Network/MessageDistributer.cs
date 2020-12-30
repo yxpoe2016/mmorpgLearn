@@ -73,6 +73,11 @@ namespace Network
         {
         }
 
+        /// <summary>
+        /// 订阅
+        /// </summary>
+        /// <typeparam name="Tm"></typeparam>
+        /// <param name="messageHandler"></param>
         public void Subscribe<Tm>(MessageHandler<Tm> messageHandler)
         {
             string type = typeof(Tm).Name;
@@ -82,6 +87,12 @@ namespace Network
             }
             messageHandlers[type] = (MessageHandler<Tm>)messageHandlers[type] + messageHandler;
         }
+
+        /// <summary>
+        /// 取消订阅
+        /// </summary>
+        /// <typeparam name="Tm"></typeparam>
+        /// <param name="messageHandler"></param>
         public void Unsubscribe<Tm>(MessageHandler<Tm> messageHandler)
         {
             string type = typeof(Tm).Name;

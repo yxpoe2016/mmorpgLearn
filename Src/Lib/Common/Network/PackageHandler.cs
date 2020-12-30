@@ -114,7 +114,7 @@ namespace Network
         }
 
         /// <summary>
-        /// 数据包解析
+        /// 数据包解析,分包处理，粘包问题
         /// </summary>
         /// <returns></returns>
         bool ParsePackage()

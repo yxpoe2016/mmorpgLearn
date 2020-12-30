@@ -3,8 +3,17 @@ using Common;
 
 namespace Network
 {
+    /// <summary>
+    /// 这个类也可以用反射实现
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class MessageDispatch<T> : Singleton<MessageDispatch<T>>
     {
+        /// <summary>
+        /// 分发响应，给Client用
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="message"></param>
         public void Dispatch(T sender, SkillBridge.Message.NetMessageResponse message)
         {
             if (message.userRegister != null) { MessageDistributer<T>.Instance.RaiseEvent(sender, message.userRegister); }
@@ -17,6 +26,11 @@ namespace Network
             if (message.mapEntitySync != null) { MessageDistributer<T>.Instance.RaiseEvent(sender, message.mapEntitySync); }   
         }
 
+        /// <summary>
+        /// 分发请求，给Server用
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="message"></param>
         public void Dispatch(T sender, SkillBridge.Message.NetMessageRequest message)
         {
             if (message.userRegister != null) { MessageDistributer<T>.Instance.RaiseEvent(sender,message.userRegister); }
@@ -27,7 +41,9 @@ namespace Network
             if (message.mapCharacterEnter != null) { MessageDistributer<T>.Instance.RaiseEvent(sender, message.mapCharacterEnter); }
             if (message.mapEntitySync != null) { MessageDistributer<T>.Instance.RaiseEvent(sender, message.mapEntitySync); }
             if (message.mapTeleport != null) { MessageDistributer<T>.Instance.RaiseEvent(sender, message.mapTeleport); }
-            
+
+            if (message.firstRequest != null) { MessageDistributer<T>.Instance.RaiseEvent(sender, message.firstRequest); }
+
         }
     }
 }

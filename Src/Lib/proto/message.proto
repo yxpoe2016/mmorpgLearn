@@ -119,6 +119,8 @@ message NetMessageRequest{
 
 	MapEntitySyncRequest mapEntitySync = 8;
 	MapTeleportRequest mapTeleport = 9;
+
+	FirstTestRequest firstRequest = 10;
 }
 
 message NetMessageResponse{
@@ -153,7 +155,6 @@ message UserRegisterRequest
 {
 	string user = 1;
 	string passward = 2;
-	int32 age = 3;
 }
 
 message UserRegisterResponse {
@@ -224,4 +225,10 @@ message MapEntitySyncResponse
 message MapTeleportRequest
 {
 	int32 teleporterId = 1;
+}
+
+
+message FirstTestRequest
+{
+	string helloworld = 1;
 }

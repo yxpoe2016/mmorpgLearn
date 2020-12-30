@@ -237,7 +237,7 @@ namespace Network
                 return;
             }
 
-            sendQueue.Enqueue(message);
+            sendQueue.Enqueue(message);//发送队列
         
             if (this.lastSendTime == 0)
             {
@@ -257,14 +257,14 @@ namespace Network
 
 
                 this.clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                this.clientSocket.Blocking = true;
+                this.clientSocket.Blocking = true;//阻塞，主线程都卡主，完完全全卡主
 
                 Debug.Log(string.Format("Connect[{0}] to server {1}", this.retryTimes, this.address) + "\n");
-                IAsyncResult result = this.clientSocket.BeginConnect(this.address, null, null);
-                bool success = result.AsyncWaitHandle.WaitOne(NetConnectTimeout);
+                IAsyncResult result = this.clientSocket.BeginConnect(this.address, null, null);//异步
+                bool success = result.AsyncWaitHandle.WaitOne(NetConnectTimeout);//是否要等待这个NetConnectTimeout超时时间
                 if (success)
                 {
-                    this.clientSocket.EndConnect(result);
+                    this.clientSocket.EndConnect(result);//异步请求结束掉
                 }
             }
             catch(SocketException ex)
@@ -280,9 +280,9 @@ namespace Network
                 Debug.Log("DoConnect Exception:" + e.ToString() + "\n");
             }
 
-            if (this.clientSocket.Connected)
+            if (this.clientSocket.Connected)//链接成功
             {
-                this.clientSocket.Blocking = false;
+                this.clientSocket.Blocking = false;//结束阻塞
                 this.RaiseConnected(0, "Success");
             }
             else
@@ -334,7 +334,7 @@ namespace Network
                     return false;
                 }
 
-                ret = this.clientSocket.Poll(0, SelectMode.SelectRead);
+                ret = this.clientSocket.Poll(0, SelectMode.SelectRead);//查询下有没有数据,高效
                 if (ret)
                 {
                     int n = this.clientSocket.Receive(this.receiveBuffer.GetBuffer(), 0, this.receiveBuffer.Capacity, SocketFlags.None);
@@ -429,14 +429,14 @@ namespace Network
                 return;
             }
 
-            if (this.KeepConnect())
+            if (this.KeepConnect())//断线重连
             {
-                if (this.ProcessRecv())
+                if (this.ProcessRecv())//每一帧先看有没有数据接收，先处理
                 {
-                    if (this.Connected)
+                    if (this.Connected)//有没有连着
                     {
-                        this.ProcessSend();
-                        this.ProceeMessage();
+                        this.ProcessSend();//发送消息
+                        this.ProceeMessage();//处理消息
                     }
                 }
             }
