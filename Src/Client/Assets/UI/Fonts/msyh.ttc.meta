@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9cdf50e78f84cd44498bdc93925ab83e
+guid: 2f7e8aa2928102e46bc8ebd1816f254f
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -11,7 +11,8 @@ TrueTypeFontImporter:
   fontName: Microsoft YaHei
   fontNames:
   - Microsoft YaHei
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 9cdf50e78f84cd44498bdc93925ab83e, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
