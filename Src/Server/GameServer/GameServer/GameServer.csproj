@@ -123,6 +123,7 @@
     </Compile>
     <Compile Include="Services\DBService.cs" />
     <Compile Include="Services\HelloWorldServer.cs" />
+    <Compile Include="Services\UserService.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Core\Vector3Int.cs" />
     <Compile Include="TCharacter.cs">

@@ -29,16 +29,19 @@ namespace GameServer
             thread = new Thread(new ThreadStart(this.Update));
 
             HelloWorldServer.Instance.Init();
+            UserService.Instance.Init();
             return true;
         }
 
         public void Start()
         {
+            network.Start();
             running = true;
             thread.Start();
-            network.Start();
+           
 
             HelloWorldServer.Instance.Start();
+           
         }
 
 
