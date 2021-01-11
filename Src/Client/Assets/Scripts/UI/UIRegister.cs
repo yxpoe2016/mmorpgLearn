@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using SkillBridge.Message;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,9 +15,12 @@ public class UIRegister : MonoBehaviour
 
     public Button buttonRegister;
 
+    public GameObject loginObj;
+
 	// Use this for initialization
 	void Start () {
         buttonRegister.onClick.AddListener(OnClickRegister);
+        UserService.Instance.OnRegister = OnRegisterResponse;
 
     }
 
@@ -51,5 +55,28 @@ public class UIRegister : MonoBehaviour
             return;
         }
 
+        UserService.Instance.SendRegister(username.text,password.text);
+    }
+
+    private void OnRegisterResponse(Result result,string msg)
+    {
+        switch (result)
+        {
+            case Result.Success:
+                loginObj.SetActive(true);
+                transform.gameObject.SetActive(false);
+                break;
+            case Result.Failed:
+                MessageBox.Show("注册失败");
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void backBtn()
+    {
+        loginObj.SetActive(true);
+        transform.gameObject.SetActive(false);
     }
 }

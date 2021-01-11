@@ -33,12 +33,15 @@ public class LoadingManager : MonoBehaviour {
         {
             i += Random.Range(0.1f, 1.5f);
             progressBar.value = i;
-            progressText.text = i.ToString()+"%";
+            progressText.text = i.ToString("F") +"%";
             yield return new WaitForEndOfFrame();
         }
 
         UILoading.SetActive(false);
         UILogin.SetActive(true);
+
+        UserService.Instance.ConnectToServer();
+
         yield return null;
     }
 	
