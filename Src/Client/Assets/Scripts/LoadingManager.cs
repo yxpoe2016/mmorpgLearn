@@ -29,6 +29,8 @@ public class LoadingManager : MonoBehaviour {
         yield return new WaitForSeconds(1f);
         UITips.SetActive(false);
 
+        yield return  DataManager.Instance.LoadData();
+
         for (float i = 50; i < 100;)
         {
             i += Random.Range(0.1f, 1.5f);

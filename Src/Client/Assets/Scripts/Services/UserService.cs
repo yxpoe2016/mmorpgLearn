@@ -140,7 +140,11 @@ public class UserService : Singleton<UserService>, IDisposable
 
     private void OnUserLogin(object sender, UserLoginResponse response)
     {
-        Debug.LogFormat("OnUserRegister:{0} [{1}]", response.Result, response.Errormsg);
+        Debug.LogFormat("OnUserLogin:{0} [{1}]", response.Result, response.Errormsg);
+        if (response.Result == Result.Success)
+        {
+            User.Instance.SetupUserInfo(response.Userinfo);
+        }
         if (this.OnLogin != null)
         {
             this.OnLogin(response.Result, response.Errormsg);
