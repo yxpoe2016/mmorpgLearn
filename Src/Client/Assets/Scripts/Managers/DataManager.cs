@@ -39,22 +39,22 @@ public class DataManager : Singleton<DataManager>
     {
         string json = File.ReadAllText(this.DataPath + "MapDefine.txt");
         this.Maps = JsonConvert.DeserializeObject<Dictionary<int, MapDefine>>(json);
-
+        
         yield return null;
-
+        
         json = File.ReadAllText(this.DataPath + "CharacterDefine.txt");
         this.Characters = JsonConvert.DeserializeObject<Dictionary<int, CharacterDefine>>(json);
-
+        
         yield return null;
-
+        
         json = File.ReadAllText(this.DataPath + "TeleporterDefine.txt");
         this.Teleporters = JsonConvert.DeserializeObject<Dictionary<int, TeleporterDefine>>(json);
-
+        
         yield return null;
-
+        
         json = File.ReadAllText(this.DataPath + "SpawnPointDefine.txt");
         this.SpawnPoints = JsonConvert.DeserializeObject<Dictionary<int, Dictionary<int, SpawnPointDefine>>>(json);
-
+        
         yield return null;
     }
 

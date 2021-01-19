@@ -32,7 +32,9 @@ public class UICharacterSelect : MonoBehaviour
     public UICharacterView characterView;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
+        // DataManager.Instance.Load();
 		InitCharacterSelect(true);
 	}
 
@@ -71,7 +73,9 @@ public class UICharacterSelect : MonoBehaviour
             titles[i].gameObject.SetActive(i == charClass - 1);
             names[i].text = DataManager.Instance.Characters[i + 1].Name;
         }
-        // descs.text = DataManager.Instance.Characters[charClass].
+
+        descs.text = DataManager.Instance.Characters[charClass].Description;
+        Debug.Log(descs.text);
     }
 
     void OnCharacterCreate(Result result, string message)
