@@ -1,0 +1,29 @@
+2021-01-19 16:14:48,965 [ 1] INFO  Unity: LoadingManager start
+2021-01-19 16:14:52,214 [ 1] INFO  Unity: DataManager > DataManager()
+2021-01-19 16:14:53,416 [ 1] INFO  Unity: ConnectToServer() Start
+2021-01-19 16:14:53,423 [ 1] INFO  Unity: DoConnect
+2021-01-19 16:14:53,425 [ 1] INFO  Unity: NetClient.DoConnect on 127.0.0.1:8000
+2021-01-19 16:14:53,429 [ 1] INFO  Unity: Connect[0] to server 127.0.0.1:8000
+
+2021-01-19 16:14:53,435 [ 1] INFO  Unity: LoadingMessager::OnGameServerConnect :0 reason:Success
+2021-01-19 16:14:57,085 [ 1] INFO  Unity: UserRegisterRequest::user :ads psw:123
+2021-01-19 16:14:57,194 [ 1] INFO  Unity: OnUserLogin:Failed [用户不存在]
+2021-01-19 16:15:04,341 [ 1] INFO  Unity: UserRegisterRequest::user :asd psw:123
+2021-01-19 16:15:04,385 [ 1] INFO  Unity: OnUserLogin:Success [None]
+2021-01-19 16:15:04,387 [ 1] INFO  Unity: LoadLevel: CharSelect
+2021-01-19 16:15:04,589 [ 1] INFO  Unity: LevelLoadCompleted:1
+2021-01-19 16:15:06,636 [ 1] INFO  Unity: 这是一个法师
+2021-01-19 16:15:07,744 [ 1] INFO  Unity: 这是一个弓箭手
+2021-01-19 16:15:08,323 [ 1] INFO  Unity: 这是一个战士
+2021-01-19 16:15:10,892 [ 1] INFO  Unity: 这是一个弓箭手
+2021-01-19 16:15:11,306 [ 1] INFO  Unity: 这是一个法师
+2021-01-19 16:15:12,299 [ 1] INFO  Unity: 这是一个弓箭手
+2021-01-19 16:15:12,829 [ 1] INFO  Unity: 这是一个战士
+2021-01-19 16:15:14,709 [ 1] INFO  Unity: 这是一个弓箭手
+2021-01-19 16:15:15,221 [ 1] INFO  Unity: 这是一个法师
+2021-01-19 16:15:16,946 [ 1] INFO  Unity: OnDestroy NetworkManager.
+2021-01-19 16:15:16,947 [ 1] WARN  Unity: CloseConnection(), errorCode: 1007
+UnityEngine.Debug:LogWarning(Object)
+Network.NetClient:CloseConnection(Int32) (at Assets/Scripts/Network/NetClient.cs:180)
+Network.NetClient:OnDestroy() (at Assets/Scripts/Network/NetClient.cs:175)
+

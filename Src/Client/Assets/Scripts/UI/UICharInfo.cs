@@ -12,6 +12,15 @@ public class UICharInfo : MonoBehaviour
     public Text charClass;
 
     public Text charName;
+
+    public Image SelectImage;
+
+    public bool IsSelect
+    {
+        get { return SelectImage.IsActive(); }
+        set { SelectImage.gameObject.SetActive(value);}
+    }
+
 	// Use this for initialization
 	void Start () {
         if (info!=null)
@@ -25,4 +34,6 @@ public class UICharInfo : MonoBehaviour
 	void Update () {
 		
 	}
+
+
 }

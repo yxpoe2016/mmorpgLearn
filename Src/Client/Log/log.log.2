@@ -1,0 +1,36 @@
+2021-01-23 11:53:05,222 [ 1] INFO  Unity: LoadingManager start
+2021-01-23 11:53:08,506 [ 1] INFO  Unity: DataManager > DataManager()
+2021-01-23 11:53:09,879 [ 1] INFO  Unity: ConnectToServer() Start
+2021-01-23 11:53:09,890 [ 1] INFO  Unity: DoConnect
+2021-01-23 11:53:09,895 [ 1] INFO  Unity: NetClient.DoConnect on 127.0.0.1:8000
+2021-01-23 11:53:09,904 [ 1] INFO  Unity: Connect[0] to server 127.0.0.1:8000
+
+2021-01-23 11:53:11,945 [ 1] WARN  Unity: CloseConnection(), errorCode: 1005
+UnityEngine.Debug:LogWarning(Object)
+Network.NetClient:CloseConnection(Int32) (at Assets/Scripts/Network/NetClient.cs:180)
+Network.NetClient:DoConnect() (at Assets/Scripts/Network/NetClient.cs:274)
+Network.NetClient:Connect(Int32) (at Assets/Scripts/Network/NetClient.cs:169)
+UserService:ConnectToServer() (at Assets/Scripts/Services/UserService.cs:45)
+<Start>c__Iterator0:MoveNext() (at Assets/Scripts/LoadingManager.cs:45)
+
+2021-01-23 11:53:11,953 [ 1] ERROR Unity: DoConnect SocketException:[10061,ConnectionRefused,10061]System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。
+
+  at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP, Boolean requireSocketPolicy) [0x00000] in <filename unknown>:0 
+  at System.Net.Sockets.Socket+Worker.Connect () [0x00000] in <filename unknown>:0  
+UnityEngine.Debug:LogErrorFormat(String, Object[])
+Network.NetClient:DoConnect() (at Assets/Scripts/Network/NetClient.cs:276)
+Network.NetClient:Connect(Int32) (at Assets/Scripts/Network/NetClient.cs:169)
+UserService:ConnectToServer() (at Assets/Scripts/Services/UserService.cs:45)
+<Start>c__Iterator0:MoveNext() (at Assets/Scripts/LoadingManager.cs:45)
+
+2021-01-23 11:53:11,959 [ 1] INFO  Unity: DoConnect
+2021-01-23 11:53:11,961 [ 1] INFO  Unity: NetClient.DoConnect on 127.0.0.1:8000
+2021-01-23 11:53:11,964 [ 1] INFO  Unity: Connect[1] to server 127.0.0.1:8000
+
+2021-01-23 11:53:12,975 [ 1] INFO  Unity: LoadingMessager::OnGameServerConnect :0 reason:Success
+2021-01-23 11:53:21,441 [ 1] INFO  Unity: OnDestroy NetworkManager.
+2021-01-23 11:53:21,441 [ 1] WARN  Unity: CloseConnection(), errorCode: 1007
+UnityEngine.Debug:LogWarning(Object)
+Network.NetClient:CloseConnection(Int32) (at Assets/Scripts/Network/NetClient.cs:180)
+Network.NetClient:OnDestroy() (at Assets/Scripts/Network/NetClient.cs:175)
+

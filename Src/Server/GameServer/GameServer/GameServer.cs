@@ -8,7 +8,7 @@ using System.Net.Sockets;
 using System.Configuration;
 
 using System.Threading;
-
+using GameServer.Managers;
 using Network;
 using GameServer.Services;
 
@@ -30,6 +30,8 @@ namespace GameServer
 
             HelloWorldServer.Instance.Init();
             UserService.Instance.Init();
+            DataManager.Instance.Load();
+            MapManager.Instance.Init();
             return true;
         }
 
