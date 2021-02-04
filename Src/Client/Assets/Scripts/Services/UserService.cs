@@ -188,8 +188,8 @@ public class UserService : Singleton<UserService>, IDisposable
 
         if (response.Result == Result.Success)
         {
-            User.Instance.info.Player.Characters.Clear();
-            User.Instance.info.Player.Characters.AddRange(response.Characters);
+            User.Instance.Info.Player.Characters.Clear();
+            User.Instance.Info.Player.Characters.AddRange(response.Characters);
         }
 
         if (this.OnCharacterCreate !=null)
@@ -238,7 +238,7 @@ public class UserService : Singleton<UserService>, IDisposable
     {
         Debug.LogFormat("OnMapCharacterEnter: {0}",response.mapId);
         NCharacterInfo info = response.Characters[0];
-        User.Instance.CurrentChracter = info;
+        User.Instance.CurrentCharacter = info;
         SceneManager.Instance.LoadScene(DataManager.Instance.Maps[response.mapId].Resource);
 
     }

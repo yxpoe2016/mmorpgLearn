@@ -52,11 +52,11 @@ public class UICharacterSelect : MonoBehaviour
             }
             uiChars.Clear();
 
-            for (int i = 0; i < User.Instance.info.Player.Characters.Count; i++)
+            for (int i = 0; i < User.Instance.Info.Player.Characters.Count; i++)
             {
                 GameObject go = Instantiate(uiCharInfo, this.uiCharList);
                 UICharInfo chrInfo = go.GetComponent<UICharInfo>();
-                chrInfo.info = User.Instance.info.Player.Characters[i];
+                chrInfo.info = User.Instance.Info.Player.Characters[i];
 
                 Button button = go.GetComponent<Button>();
                 int idx = i;
@@ -113,12 +113,12 @@ public class UICharacterSelect : MonoBehaviour
     public void OnSelectCharacter(int idx)
     {
         this.selectCharacterIdx = idx;
-        var cha = User.Instance.info.Player.Characters[idx];
+        var cha = User.Instance.Info.Player.Characters[idx];
         Debug.LogFormat("Select Char:[{0}]{1}[{2}]", cha.Id, cha.Name, cha.Class);
-        User.Instance.CurrentChracter = cha;
+        User.Instance.CurrentCharacter = cha;
         characterView.CurrectCharacter = idx;
 
-        for (int i = 0; i < User.Instance.info.Player.Characters.Count; i++)
+        for (int i = 0; i < User.Instance.Info.Player.Characters.Count; i++)
         {
             uiChars[i].GetComponent<UICharInfo>().IsSelect = i == idx;
         }
