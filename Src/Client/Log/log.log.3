@@ -1,25 +1,53 @@
-2021-01-20 14:30:29,163 [ 1] INFO  Unity: LoadingManager start
-2021-01-20 14:30:32,369 [ 1] INFO  Unity: DataManager > DataManager()
-2021-01-20 14:30:33,679 [ 1] INFO  Unity: ConnectToServer() Start
-2021-01-20 14:30:33,686 [ 1] INFO  Unity: DoConnect
-2021-01-20 14:30:33,689 [ 1] INFO  Unity: NetClient.DoConnect on 127.0.0.1:8000
-2021-01-20 14:30:33,694 [ 1] INFO  Unity: Connect[0] to server 127.0.0.1:8000
+2021-02-05 12:23:48,407 [ 1] INFO  Unity: LoadingManager start
+2021-02-05 12:23:51,524 [ 1] INFO  Unity: DataManager > DataManager()
+2021-02-05 12:23:52,637 [ 1] INFO  Unity: ConnectToServer() Start
+2021-02-05 12:23:52,644 [ 1] INFO  Unity: DoConnect
+2021-02-05 12:23:52,646 [ 1] INFO  Unity: NetClient.DoConnect on 127.0.0.1:8000
+2021-02-05 12:23:52,652 [ 1] INFO  Unity: Connect[0] to server 127.0.0.1:8000
 
-2021-01-20 14:30:33,700 [ 1] INFO  Unity: LoadingMessager::OnGameServerConnect :0 reason:Success
-2021-01-20 14:30:36,653 [ 1] INFO  Unity: UserRegisterRequest::user :asd psw:123
-2021-01-20 14:30:36,773 [ 1] INFO  Unity: OnUserLogin:Success [None]
-2021-01-20 14:30:36,775 [ 1] INFO  Unity: LoadLevel: CharSelect
-2021-01-20 14:30:36,961 [ 1] INFO  Unity: LevelLoadCompleted:1
-2021-01-20 14:30:38,335 [ 1] INFO  Unity: Select Char:[1]箭手暗暗[Archer]
-2021-01-20 14:30:38,915 [ 1] INFO  Unity: Select Char:[2]zs[Warrior]
-2021-01-20 14:30:39,379 [ 1] INFO  Unity: Select Char:[1]箭手暗暗[Archer]
-2021-01-20 14:30:39,744 [ 1] INFO  Unity: Select Char:[2]zs[Warrior]
-2021-01-20 14:30:40,109 [ 1] INFO  Unity: Select Char:[1]箭手暗暗[Archer]
-2021-01-20 14:30:40,489 [ 1] INFO  Unity: Select Char:[2]zs[Warrior]
-2021-01-20 14:30:40,969 [ 1] INFO  Unity: Select Char:[1]箭手暗暗[Archer]
-2021-01-20 14:30:42,052 [ 1] INFO  Unity: OnDestroy NetworkManager.
-2021-01-20 14:30:42,053 [ 1] WARN  Unity: CloseConnection(), errorCode: 1007
+2021-02-05 12:23:52,657 [ 1] INFO  Unity: LoadingMessager::OnGameServerConnect :0 reason:Success
+2021-02-05 12:24:01,511 [ 1] INFO  Unity: UserRegisterRequest::user :qq psw:qq
+2021-02-05 12:24:04,335 [ 1] INFO  Unity: OnUserRegister:Success [None]
+2021-02-05 12:24:04,338 [ 1] ERROR Unity: Message handler exception:, The variable loginObj of UIRegister has not been assigned.
+You probably need to assign the loginObj variable of the UIRegister script in the inspector., Assembly-CSharp,   at (wrapper managed-to-native) UnityEngine.GameObject:SetActive (bool)
+  at UIRegister.OnRegisterResponse (Result result, System.String msg) [0x0001a] in D:\GitDisk\MMORPGLearn\mmorpgLearn\Src\Client\Assets\Scripts\UI\UIRegister.cs:66 
+  at UserService.OnUserRegister (System.Object sender, SkillBridge.Message.UserRegisterResponse response) [0x00046] in D:\GitDisk\MMORPGLearn\mmorpgLearn\Src\Client\Assets\Scripts\Services\UserService.cs:124 
+  at Network.MessageDistributer`1[System.Object].RaiseEvent[UserRegisterResponse] (System.Object sender, SkillBridge.Message.UserRegisterResponse msg) [0x00000] in <filename unknown>:0 
+2021-02-05 12:24:04,339 [ 1] FATAL Unity: <log4net.Error>Exception during StringFormat: Input string was not in a correct format. <format>{0
+{1}</format><args>{UnassignedReferenceException: The variable loginObj of UIRegister has not been assigned.
+You probably need to assign the loginObj variable of the UIRegister script in the inspector., UIRegister.OnRegisterResponse (Result result, System.String msg) (at Assets/Scripts/UI/UIRegister.cs:66)
+UserService.OnUserRegister (System.Object sender, SkillBridge.Message.UserRegisterResponse response) (at Assets/Scripts/Services/UserService.cs:124)
+Network.MessageDistributer`1[System.Object].RaiseEvent[UserRegisterResponse] (System.Object sender, SkillBridge.Message.UserRegisterResponse msg)
+}</args></log4net.Error>
+2021-02-05 12:24:47,526 [ 1] INFO  Unity: UserRegisterRequest::user :qwe psw:qwe
+2021-02-05 12:24:47,576 [ 1] INFO  Unity: OnUserRegister:Failed [用户已存在.]
+2021-02-05 12:24:52,157 [ 1] INFO  Unity: UserRegisterRequest::user :qwe psw:qwe
+2021-02-05 12:24:52,190 [ 1] INFO  Unity: OnUserRegister:Failed [用户已存在.]
+2021-02-05 12:25:26,644 [ 1] INFO  Unity: UserRegisterRequest::user :aa psw:aa
+2021-02-05 12:25:26,694 [ 1] INFO  Unity: OnUserRegister:Success [None]
+2021-02-05 12:25:26,694 [ 1] ERROR Unity: Message handler exception:, The variable loginObj of UIRegister has not been assigned.
+You probably need to assign the loginObj variable of the UIRegister script in the inspector., Assembly-CSharp,   at (wrapper managed-to-native) UnityEngine.GameObject:SetActive (bool)
+  at UIRegister.OnRegisterResponse (Result result, System.String msg) [0x0001a] in D:\GitDisk\MMORPGLearn\mmorpgLearn\Src\Client\Assets\Scripts\UI\UIRegister.cs:66 
+  at UserService.OnUserRegister (System.Object sender, SkillBridge.Message.UserRegisterResponse response) [0x00046] in D:\GitDisk\MMORPGLearn\mmorpgLearn\Src\Client\Assets\Scripts\Services\UserService.cs:124 
+  at Network.MessageDistributer`1[System.Object].RaiseEvent[UserRegisterResponse] (System.Object sender, SkillBridge.Message.UserRegisterResponse msg) [0x00000] in <filename unknown>:0 
+2021-02-05 12:25:26,695 [ 1] FATAL Unity: <log4net.Error>Exception during StringFormat: Input string was not in a correct format. <format>{0
+{1}</format><args>{UnassignedReferenceException: The variable loginObj of UIRegister has not been assigned.
+You probably need to assign the loginObj variable of the UIRegister script in the inspector., UIRegister.OnRegisterResponse (Result result, System.String msg) (at Assets/Scripts/UI/UIRegister.cs:66)
+UserService.OnUserRegister (System.Object sender, SkillBridge.Message.UserRegisterResponse response) (at Assets/Scripts/Services/UserService.cs:124)
+Network.MessageDistributer`1[System.Object].RaiseEvent[UserRegisterResponse] (System.Object sender, SkillBridge.Message.UserRegisterResponse msg)
+}</args></log4net.Error>
+2021-02-05 12:26:01,664 [ 1] INFO  Unity: UserRegisterRequest::user :aa psw:aa
+2021-02-05 12:26:01,725 [ 1] INFO  Unity: OnUserLogin:Success [None]
+2021-02-05 12:26:01,727 [ 1] INFO  Unity: LoadLevel: CharSelect
+2021-02-05 12:26:01,921 [ 1] INFO  Unity: LevelLoadCompleted:1
+2021-02-05 12:26:18,969 [ 1] INFO  Unity: CharecterCreateRequest::charName :gg cls:Warrior
+2021-02-05 12:26:19,037 [ 1] INFO  Unity: OnUserCreateCharacter:Success [None]
+2021-02-05 12:26:21,924 [ 1] INFO  Unity: OnDestroy NetworkManager.
+2021-02-05 12:26:21,925 [ 1] WARN  Unity: CloseConnection(), errorCode: 1007
 UnityEngine.Debug:LogWarning(Object)
 Network.NetClient:CloseConnection(Int32) (at Assets/Scripts/Network/NetClient.cs:180)
 Network.NetClient:OnDestroy() (at Assets/Scripts/Network/NetClient.cs:175)
 
+2021-02-05 12:26:21,927 [ 1] INFO  Unity: Archer OnDestroy :ID:0 POS:(0, 0, 0) DIR:(0, 100, 0) SPD:0 
+2021-02-05 12:26:21,928 [ 1] INFO  Unity: Warrior OnDestroy :ID:0 POS:(0, 0, 0) DIR:(0, 100, 0) SPD:0 
+2021-02-05 12:26:21,928 [ 1] INFO  Unity: Wizard OnDestroy :ID:0 POS:(0, 0, 0) DIR:(0, 100, 0) SPD:0 

@@ -43,7 +43,7 @@ public class LoadingManager : MonoBehaviour {
         UILogin.SetActive(true);
 
         UserService.Instance.ConnectToServer();
-
+        MapService.Instance.Init();
         yield return null;
     }
 	

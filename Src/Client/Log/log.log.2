@@ -1,35 +1,63 @@
-2021-01-23 11:53:05,222 [ 1] INFO  Unity: LoadingManager start
-2021-01-23 11:53:08,506 [ 1] INFO  Unity: DataManager > DataManager()
-2021-01-23 11:53:09,879 [ 1] INFO  Unity: ConnectToServer() Start
-2021-01-23 11:53:09,890 [ 1] INFO  Unity: DoConnect
-2021-01-23 11:53:09,895 [ 1] INFO  Unity: NetClient.DoConnect on 127.0.0.1:8000
-2021-01-23 11:53:09,904 [ 1] INFO  Unity: Connect[0] to server 127.0.0.1:8000
+2021-02-05 12:26:25,902 [ 1] INFO  Unity: LoadingManager start
+2021-02-05 12:26:29,053 [ 1] INFO  Unity: DataManager > DataManager()
+2021-02-05 12:26:30,371 [ 1] INFO  Unity: ConnectToServer() Start
+2021-02-05 12:26:30,378 [ 1] INFO  Unity: DoConnect
+2021-02-05 12:26:30,381 [ 1] INFO  Unity: NetClient.DoConnect on 127.0.0.1:8000
+2021-02-05 12:26:30,388 [ 1] INFO  Unity: Connect[0] to server 127.0.0.1:8000
 
-2021-01-23 11:53:11,945 [ 1] WARN  Unity: CloseConnection(), errorCode: 1005
-UnityEngine.Debug:LogWarning(Object)
-Network.NetClient:CloseConnection(Int32) (at Assets/Scripts/Network/NetClient.cs:180)
-Network.NetClient:DoConnect() (at Assets/Scripts/Network/NetClient.cs:274)
-Network.NetClient:Connect(Int32) (at Assets/Scripts/Network/NetClient.cs:169)
-UserService:ConnectToServer() (at Assets/Scripts/Services/UserService.cs:45)
-<Start>c__Iterator0:MoveNext() (at Assets/Scripts/LoadingManager.cs:45)
-
-2021-01-23 11:53:11,953 [ 1] ERROR Unity: DoConnect SocketException:[10061,ConnectionRefused,10061]System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。
-
-  at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP, Boolean requireSocketPolicy) [0x00000] in <filename unknown>:0 
-  at System.Net.Sockets.Socket+Worker.Connect () [0x00000] in <filename unknown>:0  
-UnityEngine.Debug:LogErrorFormat(String, Object[])
-Network.NetClient:DoConnect() (at Assets/Scripts/Network/NetClient.cs:276)
-Network.NetClient:Connect(Int32) (at Assets/Scripts/Network/NetClient.cs:169)
-UserService:ConnectToServer() (at Assets/Scripts/Services/UserService.cs:45)
-<Start>c__Iterator0:MoveNext() (at Assets/Scripts/LoadingManager.cs:45)
-
-2021-01-23 11:53:11,959 [ 1] INFO  Unity: DoConnect
-2021-01-23 11:53:11,961 [ 1] INFO  Unity: NetClient.DoConnect on 127.0.0.1:8000
-2021-01-23 11:53:11,964 [ 1] INFO  Unity: Connect[1] to server 127.0.0.1:8000
-
-2021-01-23 11:53:12,975 [ 1] INFO  Unity: LoadingMessager::OnGameServerConnect :0 reason:Success
-2021-01-23 11:53:21,441 [ 1] INFO  Unity: OnDestroy NetworkManager.
-2021-01-23 11:53:21,441 [ 1] WARN  Unity: CloseConnection(), errorCode: 1007
+2021-02-05 12:26:30,394 [ 1] INFO  Unity: LoadingMessager::OnGameServerConnect :0 reason:Success
+2021-02-05 12:26:32,620 [ 1] INFO  Unity: UserRegisterRequest::user :aa psw:aa
+2021-02-05 12:26:32,739 [ 1] INFO  Unity: OnUserLogin:Success [None]
+2021-02-05 12:26:32,741 [ 1] INFO  Unity: LoadLevel: CharSelect
+2021-02-05 12:26:32,930 [ 1] INFO  Unity: LevelLoadCompleted:1
+2021-02-05 12:26:34,150 [ 1] INFO  Unity: Select Char:[3]gg[Warrior]
+2021-02-05 12:26:36,288 [ 1] INFO  Unity: characterIdx:0
+2021-02-05 12:26:36,320 [ 1] INFO  Unity: OnGameEnter:Success [None]
+2021-02-05 12:26:43,997 [ 1] INFO  Unity: OnMapCharacterEnter: 1
+2021-02-05 12:26:43,998 [ 1] INFO  Unity: LoadLevel: MainCity
+2021-02-05 12:26:44,000 [ 1] INFO  Unity: OnMapCharacterEnter:Map:1 Count:1
+2021-02-05 12:26:44,003 [ 1] INFO  Unity: AddCharacter:3:gg Map:1 Entity:(0:pos:(5000,4500,820),dir:(100,0,0),spd:0
+2021-02-05 12:26:44,005 [ 1] INFO  Unity: LoadLevel: MainCity
+2021-02-05 12:26:44,484 [ 1] INFO  Unity: Archer OnDestroy :ID:0 POS:(0, 0, 0) DIR:(0, 100, 0) SPD:0 
+2021-02-05 12:26:44,594 [ 1] INFO  Unity: LevelLoadCompleted:1
+2021-02-05 12:26:45,292 [ 1] INFO  Unity: Character_3_gg OnDestroy :ID:0 POS:(5000, 4500, 820) DIR:(100, 0, 0) SPD:0 
+2021-02-05 12:26:45,393 [ 1] INFO  Unity: LevelLoadCompleted:1
+2021-02-05 12:26:47,550 [ 1] INFO  Unity: MoveForward
+2021-02-05 12:26:48,428 [ 1] INFO  Unity: SetDirection:(98, -18, 0)
+2021-02-05 12:26:48,478 [ 1] INFO  Unity: Stop
+2021-02-05 12:26:48,527 [ 1] INFO  Unity: SetDirection:(94, -35, 0)
+2021-02-05 12:26:48,610 [ 1] INFO  Unity: SetDirection:(86, -51, 0)
+2021-02-05 12:26:48,711 [ 1] INFO  Unity: SetDirection:(74, -68, 0)
+2021-02-05 12:26:48,794 [ 1] INFO  Unity: SetDirection:(61, -79, 0)
+2021-02-05 12:26:48,880 [ 1] INFO  Unity: SetDirection:(46, -89, 0)
+2021-02-05 12:26:48,980 [ 1] INFO  Unity: SetDirection:(27, -96, 0)
+2021-02-05 12:26:49,069 [ 1] INFO  Unity: SetDirection:(9, -100, 0)
+2021-02-05 12:26:49,168 [ 1] INFO  Unity: SetDirection:(-11, -99, 0)
+2021-02-05 12:26:49,239 [ 1] INFO  Unity: SetDirection:(-29, -96, 0)
+2021-02-05 12:26:49,322 [ 1] INFO  Unity: MoveForward
+2021-02-05 12:26:49,355 [ 1] INFO  Unity: SetDirection:(-48, -88, 0)
+2021-02-05 12:26:49,456 [ 1] INFO  Unity: SetDirection:(-64, -77, 0)
+2021-02-05 12:26:51,113 [ 1] INFO  Unity: SetDirection:(-49, -87, 0)
+2021-02-05 12:26:51,197 [ 1] INFO  Unity: SetDirection:(-33, -94, 0)
+2021-02-05 12:26:51,296 [ 1] INFO  Unity: SetDirection:(-13, -99, 0)
+2021-02-05 12:26:51,400 [ 1] INFO  Unity: SetDirection:(7, -100, 0)
+2021-02-05 12:26:51,532 [ 1] INFO  Unity: SetDirection:(24, -97, 0)
+2021-02-05 12:26:53,933 [ 1] INFO  Unity: Stop
+2021-02-05 12:26:55,126 [ 1] INFO  Unity: MoveForward
+2021-02-05 12:26:55,990 [ 1] INFO  Unity: SetPosition:(5156, 3004, 850)
+2021-02-05 12:26:57,748 [ 1] INFO  Unity: Stop
+2021-02-05 12:26:57,765 [ 1] INFO  Unity: MoveBack
+2021-02-05 12:26:58,328 [ 1] INFO  Unity: SetDirection:(4, -100, 0)
+2021-02-05 12:26:58,427 [ 1] INFO  Unity: SetDirection:(-16, -99, 0)
+2021-02-05 12:26:58,527 [ 1] INFO  Unity: SetDirection:(-36, -93, 0)
+2021-02-05 12:26:58,614 [ 1] INFO  Unity: SetDirection:(-52, -86, 0)
+2021-02-05 12:26:58,697 [ 1] INFO  Unity: SetDirection:(-66, -75, 0)
+2021-02-05 12:26:58,801 [ 1] INFO  Unity: SetDirection:(-78, -62, 0)
+2021-02-05 12:26:59,002 [ 1] INFO  Unity: SetDirection:(-88, -48, 0)
+2021-02-05 12:26:59,051 [ 1] INFO  Unity: Stop
+2021-02-05 12:27:05,799 [ 1] INFO  Unity: Character_3_gg OnDestroy :ID:0 POS:(5336, 2820, 850) DIR:(-88, -48, 0) SPD:0 
+2021-02-05 12:27:05,801 [ 1] INFO  Unity: OnDestroy NetworkManager.
+2021-02-05 12:27:05,801 [ 1] WARN  Unity: CloseConnection(), errorCode: 1007
 UnityEngine.Debug:LogWarning(Object)
 Network.NetClient:CloseConnection(Int32) (at Assets/Scripts/Network/NetClient.cs:180)
 Network.NetClient:OnDestroy() (at Assets/Scripts/Network/NetClient.cs:175)

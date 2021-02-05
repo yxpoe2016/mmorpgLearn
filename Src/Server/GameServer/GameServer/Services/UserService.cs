@@ -113,7 +113,7 @@ namespace GameServer.Services
                 TID = (int) request.Class,
                 MapID = 1,
                 MapPosX = 5000,
-                MapPosY = 400,
+                MapPosY = 4500,
                 MapPosZ = 820,
             };
 

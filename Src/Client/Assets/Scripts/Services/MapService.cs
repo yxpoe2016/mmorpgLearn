@@ -32,6 +32,7 @@ public class MapService : Singleton<MapService>, IDisposable
 
     private void OnMapCharacterEnter(object sender, MapCharacterEnterResponse response)
     {
+        Debug.LogFormat("OnMapCharacterEnter:Map:{0} Count:{1}",response.mapId,response.Characters.Count);
         foreach (var cha in response.Characters)
         {
             if (User.Instance.CurrentCharacter.Id == cha.Id)
