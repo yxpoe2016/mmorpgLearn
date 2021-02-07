@@ -49,10 +49,7 @@ public class PlayerInputController : MonoBehaviour {
     {
         if (character == null)
             return;
-
-        
-        float v = Input.GetAxis("Vertical");
-        if (v > 0.01)
+        if (Input.GetKey(KeyCode.W))
         {
             if (state != SkillBridge.Message.CharacterState.Move)
             {
@@ -62,7 +59,7 @@ public class PlayerInputController : MonoBehaviour {
             }
             this.rb.velocity = this.rb.velocity.y * Vector3.up + GameObjectTool.LogicToWorld(character.direction) * (this.character.speed + 9.81f) / 100f;
         }
-        else if (v < -0.01)
+        else if(Input.GetKey(KeyCode.S))
         {
             if (state != SkillBridge.Message.CharacterState.Move)
             {
@@ -82,6 +79,40 @@ public class PlayerInputController : MonoBehaviour {
                 this.SendEntityEvent(EntityEvent.Idle);
             }
         }
+        
+        // float v = Input.GetAxis("Vertical");
+        // if (v > 0.01)
+        // {
+        //     if (state != SkillBridge.Message.CharacterState.Move)
+        //     {
+        //         state = SkillBridge.Message.CharacterState.Move;
+        //         this.character.MoveForward();
+        //         this.SendEntityEvent(EntityEvent.MoveFwd);
+        //         Debug.Log("@@@");
+        //     }
+        //     this.rb.velocity = this.rb.velocity.y * Vector3.up + GameObjectTool.LogicToWorld(character.direction) * (this.character.speed + 9.81f) / 100f;
+        // }
+        // else if (v < -0.01)
+        // {
+        //     if (state != SkillBridge.Message.CharacterState.Move)
+        //     {
+        //         state = SkillBridge.Message.CharacterState.Move;
+        //         this.character.MoveBack();
+        //         this.SendEntityEvent(EntityEvent.MoveBack);
+        //     }
+        //     this.rb.velocity = this.rb.velocity.y * Vector3.up + GameObjectTool.LogicToWorld(character.direction) * (this.character.speed + 9.81f) / 100f;
+        // }
+        // else
+        // {
+        //     if (state != SkillBridge.Message.CharacterState.Idle)
+        //     {
+        //         state = SkillBridge.Message.CharacterState.Idle;
+        //         this.rb.velocity = Vector3.zero;
+        //         this.character.Stop();
+        //         this.SendEntityEvent(EntityEvent.Idle);
+        //         Debug.LogError("###");
+        //     }
+        // }
 
         if (Input.GetButtonDown("Jump"))
         {
