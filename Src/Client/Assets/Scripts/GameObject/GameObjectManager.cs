@@ -71,6 +71,8 @@ public class GameObjectManager : MonoBehaviour
             {
                 if (character.Info.Id == User.Instance.CurrentCharacter.Id)
                 {
+                    User.Instance.CurrentCharacterObject = go;
+                    GameObject.Find("UIMianCity/Minimap").GetComponent<UIMinimap>().setPlayerTransform();
                     MainPlayerCamera.Instance.player = go;
                     pc.enabled = true;
                     pc.character = character;
@@ -81,6 +83,8 @@ public class GameObjectManager : MonoBehaviour
                     pc.enabled = false;
                 }
             }
+
+        
             UIWorldElementManager.Instance.AddCharacterNameBar(go.transform, character);
         }
     }

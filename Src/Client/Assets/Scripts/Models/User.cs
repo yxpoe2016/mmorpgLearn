@@ -1,4 +1,8 @@
 ﻿
+using Common.Data;
+using SkillBridge.Message;
+using UnityEngine;
+
 /// <summary>
 /// 本地映射
 /// </summary>
@@ -18,5 +22,9 @@ public class User : Singleton<User>
     }
 
         public SkillBridge.Message.NCharacterInfo CurrentCharacter { get; set; }
+
+        public MapDefine CurrentMapData { get; set; }
+
+        public GameObject CurrentCharacterObject { get; set; }
 
 }
