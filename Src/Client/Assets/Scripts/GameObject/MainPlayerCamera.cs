@@ -21,6 +21,8 @@ public class MainPlayerCamera : MonoSingleton<MainPlayerCamera>
     private void LateUpdate()
     {
         if (player == null)
+            player = User.Instance.CurrentCharacterObject;
+        if (player == null)
             return;
 
         this.transform.position = player.transform.position;

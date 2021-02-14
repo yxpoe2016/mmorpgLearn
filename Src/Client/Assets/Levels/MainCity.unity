@@ -14783,48 +14783,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 575baaff927ca414d8bc88b9a92572ec, type: 2}
   m_IsPrefabAsset: 0
---- !u!1001 &442364300
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4067696412833016, guid: fa5e674ddff5da64bb1be8f2cfc31d7c, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 40.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 4067696412833016, guid: fa5e674ddff5da64bb1be8f2cfc31d7c, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4067696412833016, guid: fa5e674ddff5da64bb1be8f2cfc31d7c, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 31.81
-      objectReference: {fileID: 0}
-    - target: {fileID: 4067696412833016, guid: fa5e674ddff5da64bb1be8f2cfc31d7c, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4067696412833016, guid: fa5e674ddff5da64bb1be8f2cfc31d7c, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4067696412833016, guid: fa5e674ddff5da64bb1be8f2cfc31d7c, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4067696412833016, guid: fa5e674ddff5da64bb1be8f2cfc31d7c, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4067696412833016, guid: fa5e674ddff5da64bb1be8f2cfc31d7c, type: 2}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: fa5e674ddff5da64bb1be8f2cfc31d7c, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1001 &445067366
 Prefab:
   m_ObjectHideFlags: 0
@@ -45305,6 +45263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40c635be0209fa5488b5b0f96ce1700f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  global: 1
 --- !u!4 &1530160567
 Transform:
   m_ObjectHideFlags: 0
@@ -52905,7 +52864,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 9cdf50e78f84cd44498bdc93925ab83e, type: 3}
+    m_Font: {fileID: 12800000, guid: 2f7e8aa2928102e46bc8ebd1816f254f, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0

@@ -1,115 +1,109 @@
-2021-02-09 14:32:42,998 [ 1] INFO  Unity: LoadingManager start
-2021-02-09 14:32:46,315 [ 1] INFO  Unity: DataManager > DataManager()
-2021-02-09 14:32:47,481 [ 1] INFO  Unity: ConnectToServer() Start
-2021-02-09 14:32:47,488 [ 1] INFO  Unity: DoConnect
-2021-02-09 14:32:47,494 [ 1] INFO  Unity: NetClient.DoConnect on 127.0.0.1:8000
-2021-02-09 14:32:47,500 [ 1] INFO  Unity: Connect[0] to server 127.0.0.1:8000
+2021-02-14 15:37:29,180 [ 1] INFO  Unity: LoadingManager start
+2021-02-14 15:37:32,401 [ 1] INFO  Unity: DataManager > DataManager()
+2021-02-14 15:37:33,681 [ 1] INFO  Unity: ConnectToServer() Start
+2021-02-14 15:37:33,686 [ 1] INFO  Unity: DoConnect
+2021-02-14 15:37:33,689 [ 1] INFO  Unity: NetClient.DoConnect on 127.0.0.1:8000
+2021-02-14 15:37:33,694 [ 1] INFO  Unity: Connect[0] to server 127.0.0.1:8000
 
-2021-02-09 14:32:47,507 [ 1] INFO  Unity: LoadingMessager::OnGameServerConnect :0 reason:Success
-2021-02-09 14:32:49,548 [ 1] INFO  Unity: UserRegisterRequest::user :asd psw:123
-2021-02-09 14:32:53,081 [ 1] INFO  Unity: OnUserLogin:Success [None]
-2021-02-09 14:32:53,084 [ 1] INFO  Unity: LoadLevel: CharSelect
-2021-02-09 14:32:53,341 [ 1] INFO  Unity: LevelLoadCompleted:1
-2021-02-09 14:32:54,433 [ 1] INFO  Unity: Select Char:[1]璋忒做做[Archer]
-2021-02-09 14:32:55,134 [ 1] INFO  Unity: characterIdx:0
-2021-02-09 14:32:55,184 [ 1] INFO  Unity: OnGameEnter:Success [None]
-2021-02-09 14:32:55,205 [ 1] INFO  Unity: OnMapCharacterEnter: 1
-2021-02-09 14:32:55,207 [ 1] INFO  Unity: LoadLevel: MainCity
-2021-02-09 14:32:55,208 [ 1] INFO  Unity: OnMapCharacterEnter:Map:1 Count:1
-2021-02-09 14:32:55,211 [ 1] INFO  Unity: AddCharacter:1:璋忒做做 Map:1 Entity:(0:pos:(5000,4500,820),dir:(100,0,0),spd:0
-2021-02-09 14:32:55,214 [ 1] INFO  Unity: LoadLevel: MainCity
-2021-02-09 14:32:55,789 [ 1] INFO  Unity: Archer OnDestroy :ID:0 POS:(0, 0, 0) DIR:(0, 100, 0) SPD:0 
-2021-02-09 14:32:55,790 [ 1] INFO  Unity: Wizard OnDestroy :ID:0 POS:(0, 0, 0) DIR:(0, 100, 0) SPD:0 
-2021-02-09 14:32:55,937 [ 1] INFO  Unity: LevelLoadCompleted:1
-2021-02-09 14:32:56,497 [ 1] INFO  Unity: Archer OnDestroy :ID:0 POS:(0, 0, 0) DIR:(0, 100, 0) SPD:0 
-2021-02-09 14:32:56,502 [ 1] INFO  Unity: Character_1_璋忒做做 OnDestroy :ID:0 POS:(5000, 4500, 820) DIR:(100, 0, 0) SPD:0 
-2021-02-09 14:32:56,636 [ 1] INFO  Unity: LevelLoadCompleted:1
-2021-02-09 14:32:57,594 [ 1] INFO  Unity: SetDirection:(98, -18, 0)
-2021-02-09 14:32:57,692 [ 1] INFO  Unity: SetDirection:(93, -35, 0)
-2021-02-09 14:32:57,775 [ 1] INFO  Unity: SetDirection:(86, -51, 0)
-2021-02-09 14:32:57,869 [ 1] INFO  Unity: SetDirection:(76, -65, 0)
-2021-02-09 14:32:57,969 [ 1] INFO  Unity: SetDirection:(63, -77, 0)
-2021-02-09 14:32:58,014 [ 1] INFO  Unity: MoveForward
-2021-02-09 14:32:58,016 [ 1] INFO  Unity: MoveForward
-2021-02-09 14:32:58,474 [ 1] INFO  Unity: SetDirection:(76, -65, 0)
-2021-02-09 14:32:58,557 [ 1] INFO  Unity: SetDirection:(86, -50, 0)
-2021-02-09 14:32:58,653 [ 1] INFO  Unity: SetDirection:(95, -31, 0)
-2021-02-09 14:32:58,753 [ 1] INFO  Unity: SetDirection:(99, -11, 0)
-2021-02-09 14:32:58,835 [ 1] INFO  Unity: SetDirection:(100, 7, 0)
-2021-02-09 14:32:58,928 [ 1] INFO  Unity: SetDirection:(96, 27, 0)
-2021-02-09 14:32:59,010 [ 1] INFO  Unity: SetDirection:(90, 44, 0)
-2021-02-09 14:32:59,124 [ 1] INFO  Unity: SetDirection:(79, 61, 0)
-2021-02-09 14:32:59,206 [ 1] INFO  Unity: SetDirection:(67, 74, 0)
-2021-02-09 14:32:59,306 [ 1] INFO  Unity: SetDirection:(50, 86, 0)
-2021-02-09 14:32:59,407 [ 1] INFO  Unity: SetDirection:(31, 95, 0)
-2021-02-09 14:32:59,504 [ 1] INFO  Unity: SetDirection:(12, 99, 0)
-2021-02-09 14:32:59,636 [ 1] INFO  Unity: SetDirection:(-6, 100, 0)
-2021-02-09 14:33:00,446 [ 1] INFO  Unity: SetDirection:(-24, 97, 0)
-2021-02-09 14:33:00,609 [ 1] INFO  Unity: SetDirection:(-41, 91, 0)
-2021-02-09 14:33:01,280 [ 1] INFO  Unity: SetDirection:(-24, 97, 0)
-2021-02-09 14:33:01,359 [ 1] INFO  Unity: Stop
-2021-02-09 14:33:01,360 [ 1] INFO  Unity: Stop
-2021-02-09 14:33:01,393 [ 1] INFO  Unity: SetDirection:(-5, 100, 0)
-2021-02-09 14:33:01,492 [ 1] INFO  Unity: SetDirection:(16, 99, 0)
-2021-02-09 14:33:01,585 [ 1] INFO  Unity: SetDirection:(36, 93, 0)
-2021-02-09 14:33:01,684 [ 1] INFO  Unity: SetDirection:(55, 84, 0)
-2021-02-09 14:33:01,791 [ 1] INFO  Unity: SetDirection:(71, 71, 0)
-2021-02-09 14:33:01,874 [ 1] INFO  Unity: SetDirection:(82, 57, 0)
-2021-02-09 14:33:01,988 [ 1] INFO  Unity: SetDirection:(92, 39, 0)
-2021-02-09 14:33:02,054 [ 1] INFO  Unity: SetDirection:(97, 22, 0)
-2021-02-09 14:33:02,154 [ 1] INFO  Unity: SetDirection:(100, 2, 0)
-2021-02-09 14:33:02,244 [ 1] INFO  Unity: SetDirection:(99, -16, 0)
-2021-02-09 14:33:02,342 [ 1] INFO  Unity: SetDirection:(93, -36, 0)
-2021-02-09 14:33:02,440 [ 1] INFO  Unity: SetDirection:(84, -55, 0)
-2021-02-09 14:33:02,540 [ 1] INFO  Unity: SetDirection:(72, -69, 0)
-2021-02-09 14:33:02,700 [ 1] INFO  Unity: MoveForward
-2021-02-09 14:33:02,701 [ 1] INFO  Unity: MoveForward
-2021-02-09 14:33:03,107 [ 1] INFO  Unity: SetPosition:(5321, 4894, 850)
-2021-02-09 14:33:03,939 [ 1] INFO  Unity: SetDirection:(59, -81, 0)
-2021-02-09 14:33:04,131 [ 1] INFO  Unity: SetDirection:(42, -91, 0)
-2021-02-09 14:33:04,231 [ 1] INFO  Unity: SetDirection:(23, -97, 0)
-2021-02-09 14:33:04,310 [ 1] INFO  Unity: SetDirection:(6, -100, 0)
-2021-02-09 14:33:04,394 [ 1] INFO  Unity: SetDirection:(-12, -99, 0)
-2021-02-09 14:33:04,509 [ 1] INFO  Unity: SetDirection:(-31, -95, 0)
-2021-02-09 14:33:04,643 [ 1] INFO  Unity: SetDirection:(-48, -88, 0)
-2021-02-09 14:33:05,520 [ 1] INFO  Unity: SetPosition:(5411, 4298, 850)
-2021-02-09 14:33:06,156 [ 1] INFO  Unity: SetDirection:(-31, -95, 0)
-2021-02-09 14:33:06,255 [ 1] INFO  Unity: SetDirection:(-12, -99, 0)
-2021-02-09 14:33:06,289 [ 1] INFO  Unity: Stop
-2021-02-09 14:33:06,290 [ 1] INFO  Unity: Stop
-2021-02-09 14:33:06,330 [ 1] INFO  Unity: SetDirection:(6, -100, 0)
-2021-02-09 14:33:06,425 [ 1] INFO  Unity: SetDirection:(26, -96, 0)
-2021-02-09 14:33:06,509 [ 1] INFO  Unity: SetDirection:(43, -90, 0)
-2021-02-09 14:33:06,615 [ 1] INFO  Unity: SetDirection:(61, -80, 0)
-2021-02-09 14:33:06,715 [ 1] INFO  Unity: SetDirection:(76, -65, 0)
-2021-02-09 14:33:06,813 [ 1] INFO  Unity: SetDirection:(88, -48, 0)
-2021-02-09 14:33:06,912 [ 1] INFO  Unity: SetDirection:(96, -29, 0)
-2021-02-09 14:33:07,009 [ 1] INFO  Unity: SetDirection:(99, -12, 0)
-2021-02-09 14:33:07,043 [ 1] INFO  Unity: MoveForward
-2021-02-09 14:33:07,044 [ 1] INFO  Unity: MoveForward
-2021-02-09 14:33:07,076 [ 1] INFO  Unity: SetDirection:(100, 6, 0)
-2021-02-09 14:33:07,191 [ 1] INFO  Unity: SetDirection:(96, 26, 0)
-2021-02-09 14:33:07,284 [ 1] INFO  Unity: SetDirection:(90, 44, 0)
-2021-02-09 14:33:07,443 [ 1] INFO  Unity: SetDirection:(81, 59, 0)
-2021-02-09 14:33:07,651 [ 1] INFO  Unity: SetDirection:(69, 73, 0)
-2021-02-09 14:33:08,223 [ 1] INFO  Unity: SetDirection:(55, 84, 0)
-2021-02-09 14:33:08,365 [ 1] INFO  Unity: SetDirection:(39, 92, 0)
-2021-02-09 14:33:09,453 [ 1] INFO  Unity: SetDirection:(22, 98, 0)
-2021-02-09 14:33:09,612 [ 1] INFO  Unity: SetDirection:(2, 100, 0)
-2021-02-09 14:33:09,716 [ 1] INFO  Unity: SetDirection:(-18, 98, 0)
-2021-02-09 14:33:09,800 [ 1] INFO  Unity: SetDirection:(-38, 93, 0)
-2021-02-09 14:33:09,908 [ 1] INFO  Unity: SetDirection:(-55, 83, 0)
-2021-02-09 14:33:10,052 [ 1] INFO  Unity: SetDirection:(-69, 72, 0)
-2021-02-09 14:33:10,437 [ 1] INFO  Unity: SetPosition:(5635, 4877, 850)
-2021-02-09 14:33:11,831 [ 1] INFO  Unity: SetPosition:(5348, 5176, 850)
-2021-02-09 14:33:13,231 [ 1] INFO  Unity: SetPosition:(5058, 5479, 850)
-2021-02-09 14:33:14,134 [ 1] INFO  Unity: Stop
-2021-02-09 14:33:14,135 [ 1] INFO  Unity: Stop
-2021-02-09 14:33:15,612 [ 1] INFO  Unity: Archer OnDestroy :ID:0 POS:(0, 4195, 0) DIR:(0, 100, 0) SPD:0 
-2021-02-09 14:33:15,613 [ 1] INFO  Unity: Character_1_璋忒做做 OnDestroy :ID:0 POS:(4896, 5695, 850) DIR:(-69, 72, 0) SPD:0 
-2021-02-09 14:33:15,616 [ 1] INFO  Unity: OnDestroy NetworkManager.
-2021-02-09 14:33:15,618 [ 1] WARN  Unity: CloseConnection(), errorCode: 1007
+2021-02-14 15:37:33,701 [ 1] INFO  Unity: LoadingMessager::OnGameServerConnect :0 reason:Success
+2021-02-14 15:37:36,059 [ 1] INFO  Unity: UserRegisterRequest::user :asd psw:123
+2021-02-14 15:37:39,275 [ 1] INFO  Unity: OnUserLogin:Success [None]
+2021-02-14 15:37:39,278 [ 1] INFO  Unity: LoadLevel: CharSelect
+2021-02-14 15:37:39,435 [ 1] INFO  Unity: LevelLoadCompleted:1
+2021-02-14 15:37:40,326 [ 1] INFO  Unity: Select Char:[1]璋忒做做[Archer]
+2021-02-14 15:37:41,122 [ 1] INFO  Unity: characterIdx:0
+2021-02-14 15:37:41,157 [ 1] INFO  Unity: OnGameEnter:Success [None]
+2021-02-14 15:37:41,175 [ 1] INFO  Unity: OnMapCharacterEnter: 1
+2021-02-14 15:37:41,176 [ 1] INFO  Unity: LoadLevel: MainCity
+2021-02-14 15:37:41,177 [ 1] INFO  Unity: OnMapCharacterEnter:Map:1 Count:1
+2021-02-14 15:37:41,179 [ 1] INFO  Unity: AddCharacter:1:璋忒做做 Map:1 Entity:(1:pos:(5000,4500,820),dir:(100,0,0),spd:0
+2021-02-14 15:37:41,181 [ 1] INFO  Unity: LoadLevel: MainCity
+2021-02-14 15:37:41,745 [ 1] INFO  Unity: Archer OnDestroy :ID:0 POS:(0, 0, 0) DIR:(0, 100, 0) SPD:0 
+2021-02-14 15:37:41,746 [ 1] INFO  Unity: Wizard OnDestroy :ID:0 POS:(0, 0, 0) DIR:(0, 100, 0) SPD:0 
+2021-02-14 15:37:41,867 [ 1] INFO  Unity: LevelLoadCompleted:1
+2021-02-14 15:37:42,511 [ 1] INFO  Unity: LevelLoadCompleted:1
+2021-02-14 15:37:43,927 [ 1] INFO  Unity: SetDirection:(98, 19, 0)
+2021-02-14 15:37:44,028 [ 1] INFO  Unity: SetDirection:(93, 37, 0)
+2021-02-14 15:37:44,111 [ 1] INFO  Unity: SetDirection:(85, 53, 0)
+2021-02-14 15:37:44,194 [ 1] INFO  Unity: SetDirection:(74, 67, 0)
+2021-02-14 15:37:44,227 [ 1] INFO  Unity: MoveForward
+2021-02-14 15:37:44,229 [ 1] INFO  Unity: MoveForward
+2021-02-14 15:37:44,294 [ 1] INFO  Unity: SetDirection:(59, 81, 0)
+2021-02-14 15:37:44,377 [ 1] INFO  Unity: SetDirection:(44, 90, 0)
+2021-02-14 15:37:44,380 [ 1] INFO  Unity: SetPosition:(5033, 4537, 850)
+2021-02-14 15:37:44,477 [ 1] INFO  Unity: SetDirection:(27, 96, 0)
+2021-02-14 15:37:44,546 [ 1] INFO  Unity: SetPosition:(5052, 4583, 850)
+2021-02-14 15:37:44,661 [ 1] INFO  Unity: SetDirection:(10, 100, 0)
+2021-02-14 15:37:44,714 [ 1] INFO  Unity: SetPosition:(5063, 4632, 850)
+2021-02-14 15:37:44,879 [ 1] INFO  Unity: SetPosition:(5068, 4682, 850)
+2021-02-14 15:37:45,048 [ 1] INFO  Unity: SetPosition:(5073, 4732, 850)
+2021-02-14 15:37:45,199 [ 1] INFO  Unity: SetPosition:(5078, 4782, 850)
+2021-02-14 15:37:45,367 [ 1] INFO  Unity: SetPosition:(5083, 4832, 850)
+2021-02-14 15:37:45,538 [ 1] INFO  Unity: SetPosition:(5088, 4883, 850)
+2021-02-14 15:37:45,709 [ 1] INFO  Unity: SetPosition:(5093, 4933, 850)
+2021-02-14 15:37:45,841 [ 1] INFO  Unity: Stop
+2021-02-14 15:37:45,841 [ 1] INFO  Unity: Stop
+2021-02-14 15:37:46,092 [ 1] INFO  Unity: LoadLevel: CharSelect
+2021-02-14 15:37:46,093 [ 1] INFO  Unity: UserGameLeaveRequest
+2021-02-14 15:37:46,191 [ 1] INFO  Unity: OnGameLeave:Success [None]
+2021-02-14 15:37:46,228 [ 1] INFO  Unity: LevelLoadCompleted:1
+2021-02-14 15:37:46,492 [ 1] INFO  Unity: SetPosition:(5096, 4968, 821)
+2021-02-14 15:37:46,658 [ 1] INFO  Unity: SetPosition:(5096, 4968, 768)
+2021-02-14 15:37:46,774 [ 1] INFO  Unity: SetPosition:(5096, 4968, 714)
+2021-02-14 15:37:46,873 [ 1] INFO  Unity: SetPosition:(5096, 4968, 658)
+2021-02-14 15:37:46,956 [ 1] INFO  Unity: SetPosition:(5096, 4968, 603)
+2021-02-14 15:37:47,039 [ 1] INFO  Unity: SetPosition:(5096, 4968, 541)
+2021-02-14 15:37:47,105 [ 1] INFO  Unity: SetPosition:(5096, 4968, 487)
+2021-02-14 15:37:47,188 [ 1] INFO  Unity: SetPosition:(5096, 4968, 429)
+2021-02-14 15:37:47,255 [ 1] INFO  Unity: SetPosition:(5096, 4968, 366)
+2021-02-14 15:37:47,305 [ 1] INFO  Unity: SetPosition:(5093, 4969, 316)
+2021-02-14 15:37:47,355 [ 1] INFO  Unity: SetPosition:(5096, 4968, 263)
+2021-02-14 15:37:47,405 [ 1] INFO  Unity: SetPosition:(5096, 4968, 208)
+2021-02-14 15:37:47,454 [ 1] INFO  Unity: SetPosition:(5096, 4968, 151)
+2021-02-14 15:37:47,504 [ 1] INFO  Unity: SetPosition:(5096, 4968, 91)
+2021-02-14 15:37:47,553 [ 1] INFO  Unity: SetPosition:(5096, 4968, 28)
+2021-02-14 15:37:47,603 [ 1] INFO  Unity: SetPosition:(5096, 4968, -36)
+2021-02-14 15:37:47,653 [ 1] INFO  Unity: SetPosition:(5096, 4968, -104)
+2021-02-14 15:37:47,702 [ 1] INFO  Unity: SetPosition:(5096, 4968, -174)
+2021-02-14 15:37:47,752 [ 1] INFO  Unity: SetPosition:(5096, 4968, -246)
+2021-02-14 15:37:47,802 [ 1] INFO  Unity: SetPosition:(5096, 4968, -320)
+2021-02-14 15:37:47,835 [ 1] INFO  Unity: SetPosition:(5096, 4968, -372)
+2021-02-14 15:37:47,868 [ 1] INFO  Unity: SetPosition:(5096, 4968, -424)
+2021-02-14 15:37:47,902 [ 1] INFO  Unity: SetPosition:(5096, 4968, -477)
+2021-02-14 15:37:47,935 [ 1] INFO  Unity: SetPosition:(5096, 4968, -532)
+2021-02-14 15:37:47,967 [ 1] INFO  Unity: SetPosition:(5096, 4968, -587)
+2021-02-14 15:37:48,001 [ 1] INFO  Unity: SetPosition:(5096, 4968, -644)
+2021-02-14 15:37:48,033 [ 1] INFO  Unity: SetPosition:(5096, 4968, -702)
+2021-02-14 15:37:48,066 [ 1] INFO  Unity: SetPosition:(5096, 4968, -760)
+2021-02-14 15:37:48,100 [ 1] INFO  Unity: SetPosition:(5096, 4968, -820)
+2021-02-14 15:37:48,133 [ 1] INFO  Unity: SetPosition:(5096, 4968, -881)
+2021-02-14 15:37:48,166 [ 1] INFO  Unity: SetPosition:(5096, 4968, -943)
+2021-02-14 15:37:48,199 [ 1] INFO  Unity: SetPosition:(5096, 4968, -1007)
+2021-02-14 15:37:48,232 [ 1] INFO  Unity: SetPosition:(5096, 4968, -1071)
+2021-02-14 15:37:48,265 [ 1] INFO  Unity: SetPosition:(5096, 4968, -1136)
+2021-02-14 15:37:48,299 [ 1] INFO  Unity: SetPosition:(5096, 4968, -1203)
+2021-02-14 15:37:48,332 [ 1] INFO  Unity: SetPosition:(5096, 4968, -1270)
+2021-02-14 15:37:48,365 [ 1] INFO  Unity: SetPosition:(5096, 4968, -1339)
+2021-02-14 15:37:48,398 [ 1] INFO  Unity: SetPosition:(5096, 4968, -1409)
+2021-02-14 15:37:48,431 [ 1] INFO  Unity: SetPosition:(5096, 4968, -1480)
+2021-02-14 15:37:48,464 [ 1] INFO  Unity: SetPosition:(5096, 4968, -1552)
+2021-02-14 15:37:48,498 [ 1] INFO  Unity: SetPosition:(5096, 4968, -1625)
+2021-02-14 15:37:48,531 [ 1] INFO  Unity: SetPosition:(5096, 4968, -1699)
+2021-02-14 15:37:48,563 [ 1] INFO  Unity: SetPosition:(5096, 4968, -1774)
+2021-02-14 15:37:48,597 [ 1] INFO  Unity: SetPosition:(5096, 4968, -1850)
+2021-02-14 15:37:48,630 [ 1] INFO  Unity: SetPosition:(5096, 4968, -1928)
+2021-02-14 15:37:48,663 [ 1] INFO  Unity: SetPosition:(5096, 4968, -2006)
+2021-02-14 15:37:48,696 [ 1] INFO  Unity: SetPosition:(5096, 4968, -2086)
+2021-02-14 15:37:48,729 [ 1] INFO  Unity: SetPosition:(5096, 4968, -2167)
+2021-02-14 15:37:48,762 [ 1] INFO  Unity: SetPosition:(5096, 4968, -2248)
+2021-02-14 15:37:48,796 [ 1] INFO  Unity: SetPosition:(5096, 4968, -2331)
+2021-02-14 15:37:48,828 [ 1] INFO  Unity: SetPosition:(5096, 4968, -2415)
+2021-02-14 15:37:48,871 [ 1] INFO  Unity: OnDestroy NetworkManager.
+2021-02-14 15:37:48,872 [ 1] WARN  Unity: CloseConnection(), errorCode: 1007
 UnityEngine.Debug:LogWarning(Object)
 Network.NetClient:CloseConnection(Int32) (at Assets/Scripts/Network/NetClient.cs:180)
 Network.NetClient:OnDestroy() (at Assets/Scripts/Network/NetClient.cs:175)
 
+2021-02-14 15:37:48,874 [ 1] INFO  Unity: Character_1_璋忒做做 OnDestroy :ID:1 POS:(5096, 4968, -2415) DIR:(10, 100, 0) SPD:0 
+2021-02-14 15:37:48,875 [ 1] INFO  Unity: Archer OnDestroy :ID:0 POS:(0, 0, 0) DIR:(0, 100, 0) SPD:0 
+2021-02-14 15:37:48,876 [ 1] INFO  Unity: Character_1_璋忒做做 OnDestroy :ID:1 POS:(5096, 4968, -2415) DIR:(10, 100, 0) SPD:0 

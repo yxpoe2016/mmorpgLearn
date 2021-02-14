@@ -29,8 +29,8 @@ public class UIMinimap : MonoBehaviour
             this.minimap.SetNativeSize();
             this.minimap.transform.localPosition = Vector3.zero;
         }
-      
-     
+
+
     }
 
     public void setPlayerTransform()
@@ -42,23 +42,22 @@ public class UIMinimap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerTransform != null)
-        {
-            float realWidth = MinimapBoundingBox.bounds.size.x;
-            float realHeight = MinimapBoundingBox.bounds.size.z;
+        if (playerTransform == null || MinimapBoundingBox == null)
+            return;
+        float realWidth = MinimapBoundingBox.bounds.size.x;
+        float realHeight = MinimapBoundingBox.bounds.size.z;
 
-            //角色在地图的相对位置
-            float relaX = playerTransform.position.x - MinimapBoundingBox.bounds.min.x;
-            float relaY = playerTransform.position.z - MinimapBoundingBox.bounds.min.z;
+        //角色在地图的相对位置
+        float relaX = playerTransform.position.x - MinimapBoundingBox.bounds.min.x;
+        float relaY = playerTransform.position.z - MinimapBoundingBox.bounds.min.z;
 
-            float pivotX = relaX / realWidth;
-            float pivotY = relaY / realHeight;
+        float pivotX = relaX / realWidth;
+        float pivotY = relaY / realHeight;
 
-            this.minimap.rectTransform.pivot = new Vector2(pivotX, pivotY);
-            this.minimap.rectTransform.localPosition = Vector3.zero;
-            this.arrow.transform.eulerAngles = new Vector3(0,0,-playerTransform.eulerAngles.y);
-        }
-       
+        this.minimap.rectTransform.pivot = new Vector2(pivotX, pivotY);
+        this.minimap.rectTransform.localPosition = Vector3.zero;
+        this.arrow.transform.eulerAngles = new Vector3(0, 0, -playerTransform.eulerAngles.y);
+
 
     }
 }

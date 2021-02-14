@@ -87,5 +87,26 @@ namespace GameServer.Models
             byte[] data = PackageHandler.PackMessage(message);
             conn.SendData(data, 0, data.Length);
         }
+
+        internal void CharacterLeave(NCharacterInfo cha)
+        {
+            this.MapCharacters.Remove(cha.Id);
+            foreach (var kv in this.MapCharacters)
+            {
+                this.SendCharacterLeaveMap(kv.Value.connection,cha);
+            }
+        }
+
+        private void SendCharacterLeaveMap(NetConnection<NetSession> connection, NCharacterInfo cha)
+        {
+            NetMessage message = new NetMessage();
+            message.Response = new NetMessageResponse();
+
+            message.Response.mapCharacterLeave = new MapCharacterLeaveResponse();
+            message.Response.mapCharacterLeave.characterId = cha.Id;
+
+            byte[] data = PackageHandler.PackMessage(message);
+            connection.SendData(data, 0, data.Length);
+        }
     }
 }
