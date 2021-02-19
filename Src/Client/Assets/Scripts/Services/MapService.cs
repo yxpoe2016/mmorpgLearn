@@ -51,8 +51,13 @@ public class MapService : Singleton<MapService>, IDisposable
   
     private void OnMapCharacterLeave(object sender, MapCharacterLeaveResponse message)
     {
-
+        Debug.LogFormat("OnMapCharacterLeave?: CharID:{0}",message.characterId);
+        if (message.characterId != User.Instance.CurrentCharacter.Id)
+            CharacterManager.Instance.RemoveCharacter(message.characterId);
+        else
+            CharacterManager.Instance.Clear();
     }
+
     private void EnterMap(int mapId)
     {
         if (DataManager.Instance.Maps.ContainsKey(mapId))

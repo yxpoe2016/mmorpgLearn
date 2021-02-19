@@ -52,7 +52,7 @@ namespace GameServer.Models
         /// <param name="character"></param>
         internal void CharacterEnter(NetConnection<NetSession> conn, Character character)
         {
-            Log.InfoFormat("CharacterEnter: Map:{0} characterId:{1}", this.Define.ID, character.Id);
+            Log.InfoFormat("CharacterEnter: Map:{0} characterId:{1}", this.Define.ID, character.Info.Id);
 
             character.Info.mapId = this.ID;
 
@@ -66,7 +66,8 @@ namespace GameServer.Models
             foreach (var kv in this.MapCharacters)
             {
                 message.Response.mapCharacterEnter.Characters.Add(kv.Value.character.Info);
-                this.SendCharacterEnterMap(kv.Value.connection, character.Info);
+                if (kv.Value.character != character)
+                    this.SendCharacterEnterMap(kv.Value.connection, character.Info);
             }
 
             this.MapCharacters[character.Id] = new MapCharacter(conn, character);
@@ -86,6 +87,27 @@ namespace GameServer.Models
 
             byte[] data = PackageHandler.PackMessage(message);
             conn.SendData(data, 0, data.Length);
+        }
+
+        internal void CharacterLeave(NCharacterInfo cha)
+        {
+            this.MapCharacters.Remove(cha.Id);
+            foreach (var kv in this.MapCharacters)
+            {
+                this.SendCharacterLeaveMap(kv.Value.connection,cha);
+            }
+        }
+
+        private void SendCharacterLeaveMap(NetConnection<NetSession> connection, NCharacterInfo cha)
+        {
+            NetMessage message = new NetMessage();
+            message.Response = new NetMessageResponse();
+
+            message.Response.mapCharacterLeave = new MapCharacterLeaveResponse();
+            message.Response.mapCharacterLeave.characterId = cha.Id;
+
+            byte[] data = PackageHandler.PackMessage(message);
+            connection.SendData(data, 0, data.Length);
         }
     }
 }

@@ -24,7 +24,6 @@ public class UserService : Singleton<UserService>, IDisposable
         MessageDistributer.Instance.Subscribe<UserCreateCharacterResponse>(this.OnUserCreateCharacter);
         MessageDistributer.Instance.Subscribe<UserGameEnterResponse>(this.OnGameEnter);
         MessageDistributer.Instance.Subscribe<UserGameLeaveResponse>(this.OnGameLeave);
-        MessageDistributer.Instance.Subscribe<MapCharacterEnterResponse>(OnCharacterEnter);
     }
 
     public void Dispose()
@@ -34,7 +33,6 @@ public class UserService : Singleton<UserService>, IDisposable
         MessageDistributer.Instance.Unsubscribe<UserCreateCharacterResponse>(this.OnUserCreateCharacter);
         MessageDistributer.Instance.Unsubscribe<UserGameEnterResponse>(this.OnGameEnter);
         MessageDistributer.Instance.Unsubscribe<UserGameLeaveResponse>(this.OnGameLeave);
-        MessageDistributer.Instance.Unsubscribe<MapCharacterEnterResponse>(OnCharacterEnter);
         NetClient.Instance.OnConnect -= OnGameServerConnect;
         NetClient.Instance.OnDisconnect -= OnGameServerDisconnect;
     }
@@ -234,12 +232,4 @@ public class UserService : Singleton<UserService>, IDisposable
         Debug.LogFormat("OnGameLeave:{0} [{1}]", response.Result, response.Errormsg);
     }
 
-    private void OnCharacterEnter(object sender, MapCharacterEnterResponse response)
-    {
-        Debug.LogFormat("OnMapCharacterEnter: {0}",response.mapId);
-        NCharacterInfo info = response.Characters[0];
-        User.Instance.CurrentCharacter = info;
-        SceneManager.Instance.LoadScene(DataManager.Instance.Maps[response.mapId].Resource);
-
-    }
 }
