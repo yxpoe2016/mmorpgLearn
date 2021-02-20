@@ -63,7 +63,6 @@ public class GameObjectManager : MonoSingleton<GameObjectManager>
             if (character.Info.Id == User.Instance.CurrentCharacter.Id)
             {
                 User.Instance.CurrentCharacterObject = go;
-                GameObject.Find("UIMianCity/Minimap").GetComponent<UIMinimap>().setPlayerTransform();
                 MainPlayerCamera.Instance.player = go;
                 pc.enabled = true;
                 pc.character = character;

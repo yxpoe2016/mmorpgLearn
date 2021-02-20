@@ -25,13 +25,14 @@ namespace GameServer
             network.Init(8000);
 
             DBService.Instance.Init();
+            UserService.Instance.Init();
+            DataManager.Instance.Load();
+            MapService.Instance.Init();
 
             thread = new Thread(new ThreadStart(this.Update));
 
-            HelloWorldServer.Instance.Init();
-            UserService.Instance.Init();
-            DataManager.Instance.Load();
-            MapManager.Instance.Init();
+           
+
             return true;
         }
 
@@ -40,9 +41,6 @@ namespace GameServer
             network.Start();
             running = true;
             thread.Start();
-           
-
-            HelloWorldServer.Instance.Start();
            
         }
 

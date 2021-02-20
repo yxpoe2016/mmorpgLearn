@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Common;
 using Network;
+using Services;
 using SkillBridge.Message;
 using UnityEngine;
 using UnityEngine.Events;
@@ -229,6 +230,8 @@ public class UserService : Singleton<UserService>, IDisposable
 
     void OnGameLeave(object sender, UserGameLeaveResponse response)
     {
+        MapService.Instance.CurrentMapId = 0;
+        User.Instance.CurrentCharacter = null;
         Debug.LogFormat("OnGameLeave:{0} [{1}]", response.Result, response.Errormsg);
     }
 

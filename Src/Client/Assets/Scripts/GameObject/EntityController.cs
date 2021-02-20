@@ -82,7 +82,7 @@ public class EntityController : MonoBehaviour,IEntityNotify
         {
             case EntityEvent.Idle:
                 anim.SetBool("Move", false);
-                // anim.SetTrigger("Idle");
+                anim.SetTrigger("Idle");
                 break;
             case EntityEvent.MoveFwd:
                 anim.SetBool("Move", true);
@@ -102,4 +102,11 @@ public class EntityController : MonoBehaviour,IEntityNotify
             UIWorldElementManager.Instance.RemoveCharacterNameBar(this.transform);
         Destroy(this.gameObject);
     }
+
+    public void OnEntityChanged(Entity entity)
+    {
+        Debug.LogFormat("OnEntityChanged: ID {0} POS:{1}",entity.entityId,entity.position);
+    }
+
+
 }

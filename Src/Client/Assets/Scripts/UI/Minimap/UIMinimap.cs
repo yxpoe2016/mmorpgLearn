@@ -26,22 +26,20 @@ public class UIMinimap : MonoBehaviour
         if (this.minimap.overrideSprite == null)
         {
             this.minimap.overrideSprite = MinimapManager.Instance.LoadCurrentMinimap();
-            this.minimap.SetNativeSize();
-            this.minimap.transform.localPosition = Vector3.zero;
+          
         }
 
-
-    }
-
-    public void setPlayerTransform()
-    {
-        if (User.Instance.CurrentCharacterObject != null)
-            this.playerTransform = User.Instance.CurrentCharacterObject.transform;
+        this.minimap.SetNativeSize();
+        this.minimap.transform.localPosition = Vector3.zero;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (this.playerTransform == null)
+        {
+            this.playerTransform = MinimapManager.Instance.PlayerTransform;
+        }
         if (playerTransform == null || MinimapBoundingBox == null)
             return;
         float realWidth = MinimapBoundingBox.bounds.size.x;

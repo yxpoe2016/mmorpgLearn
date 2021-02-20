@@ -63,6 +63,7 @@ namespace GameServer.Entities
             }
         }
 
+
         public Entity(Vector3Int pos,Vector3Int dir)
         {
             this.entityData = new NEntity();

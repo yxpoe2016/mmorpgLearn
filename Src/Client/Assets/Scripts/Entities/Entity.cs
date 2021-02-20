@@ -21,12 +21,20 @@ namespace Entities
         public NEntity EntityData
         {
             get {
+                UpdateEntityData();
                 return entityData;
             }
             set {
                 entityData = value;
                 this.SetEntityData(value);
             }
+        }
+
+        private void UpdateEntityData()
+        {
+            entityData.Position.FromVector3Int(this.position);
+            entityData.Direction.FromVector3Int(this.direction);
+            entityData.Speed = this.speed;
         }
 
         public Entity(NEntity entity)
@@ -54,5 +62,8 @@ namespace Entities
             this.direction = this.direction.FromNVector3(entity.Direction);
             this.speed = entity.Speed;
         }
+
+       
+
     }
 }
