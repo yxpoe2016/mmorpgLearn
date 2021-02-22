@@ -53,6 +53,16 @@ public class MapService : Singleton<MapService>, IDisposable
         }
     }
 
+    internal void SendMapTeleport(int iD)
+    {
+        SceneManager.Instance.LoadScene(iD.ToString());
+        NetMessage message =new NetMessage();
+        message.Request = new NetMessageRequest();
+        message.Request.mapTeleport = new MapTeleportRequest();
+        message.Request.mapTeleport.teleporterId = iD;
+        NetClient.Instance.SendMessage(message);
+    }
+
     private void OnMapCharacterLeave(object sender, MapCharacterLeaveResponse message)
     {
         Debug.LogFormat("OnMapCharacterLeave?: CharID:{0}", message.characterId);
