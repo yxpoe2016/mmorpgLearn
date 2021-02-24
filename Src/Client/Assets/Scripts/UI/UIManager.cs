@@ -26,7 +26,7 @@ public class UIManager : Singleton<UIManager> {
 
     }
 
-    public T Show<T>(Transform father)
+    public T Show<T>(Transform father =null)
     {
         Type type = typeof(T);
         if (this.UIResources.ContainsKey(type))

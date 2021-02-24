@@ -44,6 +44,7 @@ public class LoadingManager : MonoBehaviour {
 
         UserService.Instance.ConnectToServer();
         MapService.Instance.Init();
+        TestManage.Instance.Init();
         yield return null;
     }
 	
