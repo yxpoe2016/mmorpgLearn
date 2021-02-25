@@ -62,7 +62,7 @@ public class NpcController : MonoBehaviour
     IEnumerator DoInteractive()
     {
         yield return FacePlayer();
-        if (NpcManager.Instance.Interactive(npc))
+        if (NpcManager.Instance.Interactive(this.npcId))
         {
             anim.SetTrigger("Talk");
         }

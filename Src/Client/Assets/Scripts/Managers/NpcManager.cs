@@ -34,7 +34,7 @@ public class NpcManager : Singleton<NpcManager>
         return false;
     }
 
-    public bool Interactive(NpcDefine npc)
+    private bool Interactive(NpcDefine npc)
     {
         if (npc.Type == NpcType.Task)
         {

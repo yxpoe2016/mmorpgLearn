@@ -14,7 +14,6 @@ public class DataManager : Singleton<DataManager>
     public Dictionary<int, TeleporterDefine> Teleporters = null;
     public Dictionary<int, Dictionary<int, SpawnPointDefine>> SpawnPoints = null;
     public Dictionary<int, NpcDefine> NPCs = null;
-
     public DataManager()
     {
         this.DataPath = "Data/";

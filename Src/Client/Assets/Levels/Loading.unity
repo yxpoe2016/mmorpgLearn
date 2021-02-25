@@ -1274,7 +1274,7 @@ MonoBehaviour:
   password: {fileID: 37149603}
   passwordConfirm: {fileID: 1750260744}
   buttonRegister: {fileID: 1506186109}
-  loginObj: {fileID: 0}
+  loginObj: {fileID: 2068292932}
 --- !u!1 &476818502
 GameObject:
   m_ObjectHideFlags: 0

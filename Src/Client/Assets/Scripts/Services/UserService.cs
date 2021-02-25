@@ -214,7 +214,10 @@ public class UserService : Singleton<UserService>, IDisposable
 
         if (response.Result == Result.Success)
         {
-
+            if (response.Character!=null)
+            {
+                ItemManager.Instance.Init(response.Character.Items);
+            }
         }
     }
 
