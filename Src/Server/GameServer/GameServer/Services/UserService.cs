@@ -120,6 +120,11 @@ namespace GameServer.Services
                 MapPosZ = 820,
             };
 
+            var bag = new TCharacterBag();
+            bag.Owner = character;
+            bag.Items = new byte[0];
+            bag.Unlocked = 20;
+            character.Bag = DBService.Instance.Entities.TCharacterBags.Add(bag);
             character = DBService.Instance.Entities.Characters.Add(character);
             sender.Session.User.Player.Characters.Add(character);
             DBService.Instance.Entities.SaveChanges();
@@ -165,17 +170,20 @@ namespace GameServer.Services
             Log.InfoFormat("HasItem:[{0}]{1}", itemId, hasItem);
             if (hasItem)
             {
-                character.ItemManager.RemoveItem(itemId, 1);
+                // character.ItemManager.RemoveItem(itemId, 1);
             }
             else
             {
-                character.ItemManager.AddItem(itemId, 2);
+                character.ItemManager.AddItem(1, 211);
+                character.ItemManager.AddItem(2, 22);
+                character.ItemManager.AddItem(3, 233);
+                character.ItemManager.AddItem(4, 222);
             }
 
             Models.Item item = character.ItemManager.GetItem(itemId);
             Log.InfoFormat("Item:[{0}][{1}]", itemId, item);
             #endregion
-
+            DBService.Instance.Save();
 
             byte[] data = PackageHandler.PackMessage(message);
             sender.SendData(data,0,data.Length);

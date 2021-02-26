@@ -1,7 +1,6 @@
-﻿using System;
+﻿
+
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using SkillBridge.Message;
 
 namespace Common.Data
@@ -28,6 +27,8 @@ namespace Common.Data
         public float UseCD { get; set; }
         public int Price { get; set; }
         public int SellPrice { get; set; }
+        public int StackLimit { get; set; }
+        public string Icon { get; set; }
         public ItemFunction Function { get; set; }
         public int Param { get; set; }
         public List<int> Params { get; set; }

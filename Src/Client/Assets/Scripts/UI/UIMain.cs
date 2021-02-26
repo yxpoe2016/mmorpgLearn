@@ -43,4 +43,9 @@ public class UIMain : MonoSingleton<UIMain>
     {
         MessageBox.Show("点击" + result, "对话框", MessageBoxType.Information);
     }
+
+    public void OnClickBag()
+    {
+        UIManager.Instance.Show<UIBag>();
+    }
 }

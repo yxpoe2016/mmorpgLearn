@@ -71,6 +71,9 @@ namespace SkillBridge.Message
         [global::ProtoBuf.ProtoMember(10)]
         public global::System.Collections.Generic.List<NItemInfo> Items { get; } = new global::System.Collections.Generic.List<NItemInfo>();
 
+        [global::ProtoBuf.ProtoMember(11)]
+        public NBagInfo Bag { get; set; }
+
     }
 
     [global::ProtoBuf.ProtoContract()]
@@ -103,6 +106,21 @@ namespace SkillBridge.Message
 
         [global::ProtoBuf.ProtoMember(3, Name = @"z")]
         public int Z { get; set; }
+
+    }
+
+    [global::ProtoBuf.ProtoContract()]
+    public partial class NBagInfo : global::ProtoBuf.IExtensible
+    {
+        private global::ProtoBuf.IExtension __pbn__extensionData;
+        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [global::ProtoBuf.ProtoMember(1)]
+        public int Unlocked { get; set; }
+
+        [global::ProtoBuf.ProtoMember(2)]
+        public byte[] Items { get; set; }
 
     }
 
@@ -190,9 +208,6 @@ namespace SkillBridge.Message
 
         [global::ProtoBuf.ProtoMember(9)]
         public MapTeleportRequest mapTeleport { get; set; }
-
-        [global::ProtoBuf.ProtoMember(10)]
-        public FirstTestRequest firstRequest { get; set; }
 
     }
 
@@ -465,15 +480,30 @@ namespace SkillBridge.Message
     }
 
     [global::ProtoBuf.ProtoContract()]
-    public partial class FirstTestRequest : global::ProtoBuf.IExtensible
+    public partial class BagSaveRequest : global::ProtoBuf.IExtensible
     {
         private global::ProtoBuf.IExtension __pbn__extensionData;
         global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
             => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
 
-        [global::ProtoBuf.ProtoMember(1, Name = @"helloworld")]
+        [global::ProtoBuf.ProtoMember(1)]
+        public NBagInfo BagInfo { get; set; }
+
+    }
+
+    [global::ProtoBuf.ProtoContract()]
+    public partial class BagSaveResponse : global::ProtoBuf.IExtensible
+    {
+        private global::ProtoBuf.IExtension __pbn__extensionData;
+        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [global::ProtoBuf.ProtoMember(1, Name = @"result")]
+        public Result Result { get; set; }
+
+        [global::ProtoBuf.ProtoMember(2, Name = @"errormsg")]
         [global::System.ComponentModel.DefaultValue("")]
-        public string Helloworld { get; set; } = "";
+        public string Errormsg { get; set; } = "";
 
     }
 
@@ -537,10 +567,12 @@ namespace SkillBridge.Message
     {
         [global::ProtoBuf.ProtoEnum(Name = @"NORMAL")]
         Normal = 0,
-        [global::ProtoBuf.ProtoEnum(Name = @"MATERTAL")]
-        Matertal = 1,
-        [global::ProtoBuf.ProtoEnum(Name = @"TASK")]
-        Task = 2,
+        [global::ProtoBuf.ProtoEnum(Name = @"MATERIAL")]
+        Material = 1,
+        [global::ProtoBuf.ProtoEnum(Name = @"EQUIP")]
+        Equip = 2,
+        [global::ProtoBuf.ProtoEnum(Name = @"RIDE")]
+        Ride = 3,
     }
 
 }

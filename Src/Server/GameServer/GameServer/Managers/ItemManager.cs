@@ -76,7 +76,7 @@ namespace GameServer.Managers
                 this.Items.Add(itemId,item);
             }
             Log.InfoFormat("[{0}]UseItem[{1}:{2}]", this.Owner.Data.ID, itemId, count);
-            DBService.Instance.Save();
+            // DBService.Instance.Save();
             return true;
         }
 
@@ -92,7 +92,7 @@ namespace GameServer.Managers
                 return false;
             item.Remove(count);
             Log.InfoFormat("[{0}]UseItem[{1}:{2}]", this.Owner.Data.ID, itemId, count);
-            DBService.Instance.Save();
+            // DBService.Instance.Save();
             return true;
         }
 
