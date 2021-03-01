@@ -1,6 +1,7 @@
 ﻿
 using Common.Data;
 using SkillBridge.Message;
+using System;
 using UnityEngine;
 
 /// <summary>
@@ -27,4 +28,8 @@ public class User : Singleton<User>
 
         public GameObject CurrentCharacterObject { get; set; }
 
+    internal void AddGold(int value)
+    {
+        this.CurrentCharacter.Gold += value;
+    }
 }

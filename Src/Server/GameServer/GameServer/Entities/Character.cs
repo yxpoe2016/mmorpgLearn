@@ -15,6 +15,22 @@ namespace GameServer.Entities
         public TCharacter Data;
 
         public ItemManager ItemManager;
+        public StatusManager StatusManager;
+        public long Glod
+        {
+            get
+            {
+                return this.Data.Gold;
+            }
+            set
+            {
+                if (this.Data.Gold == value)
+                    return;
+                this.StatusManager.AddGoldChange((int) (value - this.Data.Gold));
+                this.Info.Gold = value;
+            }
+        }
+
         public Character(CharacterType type,TCharacter cha):
             base(new Core.Vector3Int(cha.MapPosX, cha.MapPosY, cha.MapPosZ),new Core.Vector3Int(100,0,0))
         {
@@ -27,6 +43,7 @@ namespace GameServer.Entities
             this.Info.Tid = cha.TID;
             this.Info.Class = (CharacterClass)cha.Class;
             this.Info.mapId = cha.MapID;
+            this.Info.Gold = cha.Gold;
             this.Info.Entity = this.EntityData;
             this.Define = DataManager.Instance.Characters[this.Info.Tid];
 
@@ -36,6 +53,7 @@ namespace GameServer.Entities
             this.Info.Bag = new NBagInfo();
             this.Info.Bag.Unlocked = this.Data.Bag.Unlocked;
             this.Info.Bag.Items = this.Data.Bag.Items;
+            this.StatusManager = new StatusManager(this);
         }
     }
 }
