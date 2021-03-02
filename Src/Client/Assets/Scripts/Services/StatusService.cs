@@ -10,7 +10,7 @@ public class StatusService : Singleton<StatusService>,IDisposable
     public delegate bool StatusNotifyHandler(NStatus status);
 
     Dictionary<StatusType,StatusNotifyHandler> eventMap = new Dictionary<StatusType, StatusNotifyHandler>();
-
+    HashSet<StatusNotifyHandler> handles = new HashSet<StatusNotifyHandler>();//哈希查询效率高
     public void Init()
     {
 
@@ -18,6 +18,8 @@ public class StatusService : Singleton<StatusService>,IDisposable
 
     public void RegisterStatusNotify(StatusType function, StatusNotifyHandler action)
     {
+        if(handles.Contains(action))
+            return;
         if (!eventMap.ContainsKey(function))
         {
             eventMap[function] = action;
@@ -26,6 +28,8 @@ public class StatusService : Singleton<StatusService>,IDisposable
         {
             eventMap[function] += action;
         }
+
+        handles.Add(action);
     }
 
     public StatusService()

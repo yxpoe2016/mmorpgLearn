@@ -119,6 +119,7 @@ namespace GameServer.Services
                 MapPosY = 4500,
                 MapPosZ = 820,
                 Gold = 168168,
+                Equips = new byte[28],
             };
 
             var bag = new TCharacterBag();
@@ -127,6 +128,18 @@ namespace GameServer.Services
             bag.Unlocked = 20;
             character.Bag = DBService.Instance.Entities.TCharacterBags.Add(bag);
             character = DBService.Instance.Entities.Characters.Add(character);
+            character.Items.Add(new TCharacterItem()
+            {
+                Owner = character,
+                ItemID = 1,
+                ItemCount = 20,
+            });
+            character.Items.Add(new TCharacterItem()
+            {
+                Owner = character,
+                ItemID = 2,
+                ItemCount = 20,
+            });
             sender.Session.User.Player.Characters.Add(character);
             DBService.Instance.Entities.SaveChanges();
 
@@ -166,23 +179,23 @@ namespace GameServer.Services
 
             //道具系统测试
             #region TestItem
-            int itemId = 1;
-            bool hasItem = character.ItemManager.HasItem(itemId);
-            Log.InfoFormat("HasItem:[{0}]{1}", itemId, hasItem);
-            if (hasItem)
-            {
-                // character.ItemManager.RemoveItem(itemId, 1);
-            }
-            else
-            {
-                character.ItemManager.AddItem(1, 211);
-                character.ItemManager.AddItem(2, 22);
-                character.ItemManager.AddItem(3, 233);
-                character.ItemManager.AddItem(4, 222);
-            }
-
-            Models.Item item = character.ItemManager.GetItem(itemId);
-            Log.InfoFormat("Item:[{0}][{1}]", itemId, item);
+            // int itemId = 1;
+            // bool hasItem = character.ItemManager.HasItem(itemId);
+            // Log.InfoFormat("HasItem:[{0}]{1}", itemId, hasItem);
+            // if (hasItem)
+            // {
+            //     // character.ItemManager.RemoveItem(itemId, 1);
+            // }
+            // else
+            // {
+            //     character.ItemManager.AddItem(1, 211);
+            //     character.ItemManager.AddItem(2, 22);
+            //     character.ItemManager.AddItem(3, 233);
+            //     character.ItemManager.AddItem(4, 222);
+            // }
+            //
+            // Models.Item item = character.ItemManager.GetItem(itemId);
+            // Log.InfoFormat("Item:[{0}][{1}]", itemId, item);
             #endregion
             DBService.Instance.Save();
 
