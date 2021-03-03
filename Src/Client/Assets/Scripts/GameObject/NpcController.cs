@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Schema;
 using Common.Data;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -23,6 +24,9 @@ public class NpcController : MonoBehaviour
         npc = NpcManager.Instance.GetNpcDefine(npcId);
         orignColor = renderer.sharedMaterial.color;
         this.StartCoroutine(Actions());
+
+        var status = QuestManager.Instance.GetQuestStatusByNpc(npc.ID);
+        UIWorldElementManager.Instance.AddNpcQuestStatus(transform, status);
     }
 
     IEnumerator Actions()
@@ -61,6 +65,7 @@ public class NpcController : MonoBehaviour
 
     IEnumerator DoInteractive()
     {
+       
         yield return FacePlayer();
         if (NpcManager.Instance.Interactive(this.npcId))
         {
