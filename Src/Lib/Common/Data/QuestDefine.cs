@@ -36,7 +36,7 @@ namespace Common.Data
         public string DialogAccept { get; set; }
         public string DialogDeny { get; set; }
         public string DialogIncomplete { get; set; }
-        public string DialoFinish { get; set; }
+        public string DialogFinish { get; set; }
 
         public QuestTarget Target1 { get; set; }
         public int Target1ID { get; set; }

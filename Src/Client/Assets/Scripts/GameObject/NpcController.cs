@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Schema;
+using Assets.Scripts.Models;
 using Common.Data;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -16,6 +17,7 @@ public class NpcController : MonoBehaviour
 
     private Color orignColor;
 
+    private NpcQuestStatus questStatus;
 	// Use this for initialization
 	void Start ()
     {
@@ -25,8 +27,26 @@ public class NpcController : MonoBehaviour
         orignColor = renderer.sharedMaterial.color;
         this.StartCoroutine(Actions());
 
-        var status = QuestManager.Instance.GetQuestStatusByNpc(npc.ID);
-        UIWorldElementManager.Instance.AddNpcQuestStatus(transform, status);
+        RefreshNpcStatus();
+        QuestManager.Instance.onQuestStatusChanged += OnQuestStatusChanged;
+    }
+
+    void OnQuestStatusChanged(Quest quest)
+    {
+        this.RefreshNpcStatus();
+    }
+
+    void RefreshNpcStatus()
+    {
+        questStatus = QuestManager.Instance.GetQuestStatusByNpc(this.npcId);
+        UIWorldElementManager.Instance.AddNpcQuestStatus(transform, questStatus);
+    }
+
+    void OnDestroy()
+    {
+        QuestManager.Instance.onQuestStatusChanged -= OnQuestStatusChanged;
+        if(UIWorldElementManager.Instance!=null)
+            UIWorldElementManager.Instance.RemoveNpcQuestStatus(this.transform);
     }
 
     IEnumerator Actions()

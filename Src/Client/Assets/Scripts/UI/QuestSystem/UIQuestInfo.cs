@@ -34,7 +34,7 @@ public class UIQuestInfo : MonoBehaviour
         else
         {
             if (quest.Info.Status == QuestStatus.Complated)
-                this.description.text = quest.Define.DialoFinish;
+                this.description.text = quest.Define.DialogFinish;
         }
 
         if (this.rewardMoney!=null)

@@ -34,8 +34,8 @@ public class UIQuestDialog : UIWindow
         {
             if (this.quest.Info.Status == QuestStatus.Complated)
             {
-                openButtons.SetActive(true);
-                submitBttons.SetActive(false);
+                openButtons.SetActive(false);
+                submitBttons.SetActive(true);
             }
             else
             {
