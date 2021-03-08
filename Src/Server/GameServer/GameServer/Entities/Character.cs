@@ -7,16 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GameServer.Managers;
+using Network;
 
 namespace GameServer.Entities
 {
-    class Character : CharacterBase
+    class Character : CharacterBase,IPostResponser
     {
         public TCharacter Data;
 
         public ItemManager ItemManager;
         public StatusManager StatusManager;
         public QuestManager QuestManager;
+        public FriendManager FriendManager;
         public long Glod
         {
             get
@@ -37,16 +39,18 @@ namespace GameServer.Entities
         {
             this.Data = cha;
             this.Info = new NCharacterInfo();
+            this.Id = cha.ID;
             this.Info.Type = type;
             this.Info.Id = cha.ID;
+            this.Info.EntityId = this.entityId;
             this.Info.Name = cha.Name;
             this.Info.Level = 10;//cha.Level;
-            this.Info.Tid = cha.TID;
+            this.Info.ConfigId = cha.TID;
             this.Info.Class = (CharacterClass)cha.Class;
             this.Info.mapId = cha.MapID;
             this.Info.Gold = cha.Gold;
             this.Info.Entity = this.EntityData;
-            this.Define = DataManager.Instance.Characters[this.Info.Tid];
+            this.Define = DataManager.Instance.Characters[this.Info.ConfigId];
 
             this.ItemManager = new ItemManager(this);
             this.ItemManager.GetItemInfos(this.Info.Items);
@@ -59,6 +63,22 @@ namespace GameServer.Entities
             this.QuestManager.GetQuestInfos(this.Info.Quests);
 
             this.StatusManager = new StatusManager(this);
+            this.FriendManager = new FriendManager(this);
+            this.FriendManager.GetFriendInfos(this.Info.Friends);
+        }
+
+        public void PostProcess(NetMessageResponse message)
+        {
+            this.FriendManager.PostProcess(message);
+            if (this.StatusManager.HasStatus)
+            {
+                this.StatusManager.PostProcess(message);
+            }
+        }
+
+        public void Clear()
+        {
+            this.FriendManager.UpdateFriendInfo(this.Info,0);
         }
     }
 }
