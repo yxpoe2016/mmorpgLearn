@@ -58,6 +58,28 @@ public class UIFriends : UIWindow
         MessageBox.Show("暂未开放");
     }
 
+    public void OnClickFriendItemInvite()
+    {
+        if (selectedItem == null)
+        {
+            MessageBox.Show("请选择要邀请的好友");
+            return;
+        }
+
+        if (selectedItem.Info.Status == 0)
+        {
+            MessageBox.Show("请选择在线的好友");
+            return;
+        }
+
+        MessageBox.Show(string.Format("确定要邀请好友[{0}]加入队伍吗?", selectedItem.Info.frindInfo.Name), "邀请好友组队", MessageBoxType.Confirm, "邀请", "取消").OnYes =
+            () =>
+            {
+                TeamService.Instance.SendTeamInviteRequest(this.selectedItem.Info.frindInfo.Id, this.selectedItem.Info.frindInfo.Name);
+            };
+
+    }
+
     public void OnClickFriendRemove()
     {
         if (selectedItem == null)

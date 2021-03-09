@@ -47,6 +47,7 @@ public class LoadingManager : MonoBehaviour {
         ShopManager.Instance.Init();
         StatusService.Instance.Init();
         FriendService.Instance.Init();
+        TeamService.Instance.Init();
         yield return null;
     }
 	
