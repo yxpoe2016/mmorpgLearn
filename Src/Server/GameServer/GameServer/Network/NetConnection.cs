@@ -132,6 +132,7 @@ namespace Network
         public void SendResponse()
         {
             byte[] data = session.GetResponse();
+            if(data!=null)
             this.SendData(data, 0, data.Length);
         }
 

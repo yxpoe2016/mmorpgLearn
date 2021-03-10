@@ -28,7 +28,7 @@ namespace GameServer.Services
         private void OnTeamInviteRequest(NetConnection<NetSession> sender, TeamInviteRequest message)
         {
             Character character = sender.Session.Character;
-            Log.InfoFormat("OnTeamInviteRequest:FromId{0} FromName{1} ToID{2} ToName{3}", message.FromId, message.FromName, message.ToId, message.ToName);
+            Log.InfoFormat("OnTeamInviteRequest:FromId{0} FromName{1} ToID{2} ToName{3}TeamID{4}", message.FromId, message.FromName, message.ToId, message.ToName,message.TeamId);
             
 
             NetConnection<NetSession> target = SessionManager.Instance.GetSession(message.ToId);
@@ -73,6 +73,7 @@ namespace GameServer.Services
                 else
                 {
                     TeamManager.Instance.AddTeamMember(requester.Session.Character, character);//队长，成员
+                   int teamid =  message.Request.TeamId;
                     requester.Session.Response.teamInviteRes = message;
                     requester.SendResponse();
                 }
