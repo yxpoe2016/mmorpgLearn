@@ -21,7 +21,7 @@ public class UIWindow : MonoBehaviour
 		No,
     }
 
-    public void Close(WindowResult result = WindowResult.None)
+    private void Close(WindowResult result = WindowResult.None)
     {
         UIManager.Instance.Close(this.Type);
         if (this.OnClose != null)
@@ -40,6 +40,11 @@ public class UIWindow : MonoBehaviour
     public virtual void OnYesClick()
     {
         this.Close(WindowResult.Yes);
+    }
+
+    public virtual void OnNoClick()
+    {
+        this.Close(WindowResult.No);
     }
 
     void OnMouseFown()

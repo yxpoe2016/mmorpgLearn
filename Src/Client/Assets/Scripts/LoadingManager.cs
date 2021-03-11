@@ -48,6 +48,7 @@ public class LoadingManager : MonoBehaviour {
         StatusService.Instance.Init();
         FriendService.Instance.Init();
         TeamService.Instance.Init();
+        GuildService.Instance.Init();
         yield return null;
     }
 	
