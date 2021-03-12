@@ -936,6 +936,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c47a755ac1bef54f97134be2fea4074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  guildName: {fileID: 114273448421591044}
+  guildID: {fileID: 114135581395265250}
+  leader: {fileID: 114700643837776002}
+  notice: {fileID: 114785414390165854}
+  memberNumber: {fileID: 114168006678937390}
 --- !u!114 &114168006678937390
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1532,6 +1537,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd5934dcc58be26449013f1309c5396b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemPrefab: {fileID: 1381605588954178, guid: 9c338e75b209051429656ce2cd33abf4, type: 2}
+  listMain: {fileID: 114625063594932230}
+  itemRoot: {fileID: 224779561792675752}
+  uiInfo: {fileID: 114140290890209664}
+  selectedItem: {fileID: 0}
 --- !u!114 &114553284172696568
 MonoBehaviour:
   m_ObjectHideFlags: 1

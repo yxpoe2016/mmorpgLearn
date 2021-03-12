@@ -300,7 +300,7 @@ namespace SkillBridge.Message
         public TeamLeaveRequest teamLeave { get; set; }
 
         [global::ProtoBuf.ProtoMember(23)]
-        public GuildCreateRequest guildCreate { get; set; }
+        public GuildCreateRequest guildCreateReq { get; set; }
 
         [global::ProtoBuf.ProtoMember(24)]
         public GuildJoinRequest guildJoinReq { get; set; }
@@ -316,6 +316,9 @@ namespace SkillBridge.Message
 
         [global::ProtoBuf.ProtoMember(28)]
         public GuildListRequest guildList { get; set; }
+
+        [global::ProtoBuf.ProtoMember(29)]
+        public GuildCreateResponse guildCreateRes { get; set; }
 
     }
 
@@ -390,7 +393,7 @@ namespace SkillBridge.Message
         public TeamLeaveResponse teamLeave { get; set; }
 
         [global::ProtoBuf.ProtoMember(23)]
-        public GuildCreateRequest guildCreate { get; set; }
+        public GuildCreateRequest guildCreateReq { get; set; }
 
         [global::ProtoBuf.ProtoMember(24)]
         public GuildJoinRequest guildJoinReq { get; set; }
@@ -399,13 +402,16 @@ namespace SkillBridge.Message
         public GuildJoinResponse guildJoinRes { get; set; }
 
         [global::ProtoBuf.ProtoMember(26, Name = @"guild")]
-        public GuildRequest Guild { get; set; }
+        public GuildResponse Guild { get; set; }
 
         [global::ProtoBuf.ProtoMember(27)]
-        public GuildLeaveRequest guildLeave { get; set; }
+        public GuildLeaveResponse guildLeave { get; set; }
 
         [global::ProtoBuf.ProtoMember(28)]
-        public GuildListRequest guildList { get; set; }
+        public GuildListResponse guildList { get; set; }
+
+        [global::ProtoBuf.ProtoMember(29)]
+        public GuildCreateResponse guildCreateRes { get; set; }
 
         [global::ProtoBuf.ProtoMember(100)]
         public StatusNotify statusNotify { get; set; }

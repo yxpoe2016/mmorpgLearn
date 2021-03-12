@@ -316,6 +316,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91dd00d1aead3eb4ab6114314f4324c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  owner: {fileID: 0}
+  nickName: {fileID: 114131703090498224}
+  class: {fileID: 114962474614846356}
+  level: {fileID: 114277176052224942}
+  title: {fileID: 114606468953878332}
+  joinTime: {fileID: 114143933598609928}
+  status: {fileID: 114498923515128330}
+  background: {fileID: 114446496395016658}
+  normalBg: {fileID: 21300000, guid: 8872433aafdc651469a7983d816495a5, type: 3}
+  selectedBg: {fileID: 21300000, guid: 3cc63e20f98b8f947b2f896300ca70ab, type: 3}
 --- !u!114 &114606468953878332
 MonoBehaviour:
   m_ObjectHideFlags: 1

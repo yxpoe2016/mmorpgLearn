@@ -21,9 +21,10 @@ namespace GameServer.Entities
         public StatusManager StatusManager;
         public QuestManager QuestManager;
         public FriendManager FriendManager;
-
+        public Guild Guild;
         public Team Team;
-        public int TeamUpdateTS;
+        public double TeamUpdateTS;
+        public double GuildUpdateTS;
 
         public long Glod
         {
@@ -71,6 +72,7 @@ namespace GameServer.Entities
             this.StatusManager = new StatusManager(this);
             this.FriendManager = new FriendManager(this);
             this.FriendManager.GetFriendInfos(this.Info.Friends);
+            this.Guild = GuildManager.Instance.GetGuild(this.Data.GuildId);
         }
 
         public void PostProcess(NetMessageResponse message)
@@ -85,6 +87,22 @@ namespace GameServer.Entities
                 {
                     TeamUpdateTS = this.Team.timestamp;
                     this.Team.PostProcess(message);
+                }
+            }
+
+            if (this.Guild != null)
+            {
+                if (this.Info.Guild == null)
+                {
+                    this.Info.Guild = this.Guild.GuildInfo(this);
+                    if (message.mapCharacterEnter != null)
+                        GuildUpdateTS = this.Guild.timestamp;
+                }
+
+                if (GuildUpdateTS < this.Guild.timestamp && message.mapCharacterEnter == null)
+                {
+                    GuildUpdateTS = this.Guild.timestamp;
+                    this.Guild.PostProcess(this,message);
                 }
             }
 

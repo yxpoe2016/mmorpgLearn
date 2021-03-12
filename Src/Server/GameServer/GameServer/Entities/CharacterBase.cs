@@ -16,7 +16,10 @@ namespace GameServer.Entities
         public int Id {get;set;}
         public NCharacterInfo Info;
         public CharacterDefine Define;
-
+        public string Name
+        {
+            get { return this.Info.Name; }
+        }
         public CharacterBase(Vector3Int pos, Vector3Int dir):base(pos,dir)
         {
 

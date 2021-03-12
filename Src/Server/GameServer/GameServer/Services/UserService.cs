@@ -164,7 +164,7 @@ namespace GameServer.Services
             sender.Session.Response.gameEnter = new UserGameEnterResponse();
             sender.Session.Response.gameEnter.Result = Result.Success;
             sender.Session.Response.gameEnter.Errormsg = "None";
-            sender.Session.Response.gameEnter.Character = character.Info;
+           
 
             //道具系统测试
             #region TestItem
@@ -187,10 +187,12 @@ namespace GameServer.Services
             // Log.InfoFormat("Item:[{0}][{1}]", itemId, item);
             #endregion
             // DBService.Instance.Save();
-
-            sender.SendResponse();
             sender.Session.Character = character;
             sender.Session.PostResponser = character;
+            sender.Session.Response.gameEnter.Character = character.Info;
+
+            sender.SendResponse();
+         
             MapManager.Instance[dbCharacter.MapID].CharacterEnter(sender, character);
         }
 

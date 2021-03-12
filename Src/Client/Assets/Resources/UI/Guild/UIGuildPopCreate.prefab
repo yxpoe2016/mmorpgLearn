@@ -667,7 +667,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114743156340229372}
         m_MethodName: OnYesClick
         m_Mode: 1
         m_Arguments:
@@ -832,6 +832,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 616708f2fb0845d48b82158c31d98973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputName: {fileID: 114064108340599396}
+  notice: {fileID: 114443347475746042}
 --- !u!222 &222074619847371090
 CanvasRenderer:
   m_ObjectHideFlags: 1

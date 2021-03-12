@@ -189,6 +189,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d71fc92d30ae8d44adf6a2891f810f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  owner: {fileID: 0}
+  id: {fileID: 114005320125839272}
+  Name: {fileID: 114627777259995668}
+  Num: {fileID: 114336359510082400}
+  Leader: {fileID: 114649954904333694}
+  background: {fileID: 114703282907670080}
+  normalBg: {fileID: 21300000, guid: 8872433aafdc651469a7983d816495a5, type: 3}
+  selectedBg: {fileID: 21300000, guid: 3cc63e20f98b8f947b2f896300ca70ab, type: 3}
 --- !u!114 &114627777259995668
 MonoBehaviour:
   m_ObjectHideFlags: 1

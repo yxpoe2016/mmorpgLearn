@@ -605,6 +605,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fcb88222f2f2d6479aff0d7c3d539ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemPrefab: {fileID: 1395561513938792, guid: 621efb442afec374e9b1a19e0c3837e8, type: 2}
+  listMain: {fileID: 114030136262876920}
+  itemRoot: {fileID: 224737661039817962}
+  uiInfo: {fileID: 114591140453235712}
+  selectedItem: {fileID: 0}
 --- !u!114 &114231364284090094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -751,8 +756,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: OnReset
+      - m_Target: {fileID: 114210918547280540}
+        m_MethodName: OnClickJoin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -900,7 +905,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114210918547280540}
         m_MethodName: OnCloseClick
         m_Mode: 1
         m_Arguments:
@@ -1044,6 +1049,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c47a755ac1bef54f97134be2fea4074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  guildName: {fileID: 114559314876373602}
+  guildID: {fileID: 114647196491501200}
+  leader: {fileID: 114635578142165154}
+  notice: {fileID: 114462960863215680}
+  memberNumber: {fileID: 114681753609545018}
 --- !u!114 &114611087497344326
 MonoBehaviour:
   m_ObjectHideFlags: 1

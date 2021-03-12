@@ -213,12 +213,13 @@ message NetMessageRequest{
 	TeamInfoRequest teamInfo = 21;
 	TeamLeaveRequest teamLeave = 22;
 
-	GuildCreateRequest guildCreate = 23;
+	GuildCreateRequest guildCreateReq = 23;
 	GuildJoinRequest guildJoinReq = 24;
 	GuildJoinResponse guildJoinRes = 25;
 	GuildRequest guild  =26;
 	GuildLeaveRequest guildLeave = 27;
 	GuildListRequest guildList = 28;
+	GuildCreateResponse guildCreateRes = 29;
 }
 
 message NetMessageResponse{
@@ -249,12 +250,13 @@ message NetMessageResponse{
 	TeamInfoResponse teamInfo = 21;
 	TeamLeaveResponse teamLeave = 22;
 
-	GuildCreateRequest guildCreate = 23;
+	GuildCreateRequest guildCreateReq = 23;
 	GuildJoinRequest guildJoinReq = 24;
 	GuildJoinResponse guildJoinRes = 25;
-	GuildRequest guild  =26;
-	GuildLeaveRequest guildLeave = 27;
-	GuildListRequest guildList = 28;
+	GuildResponse guild  =26;
+	GuildLeaveResponse  guildLeave = 27;
+	GuildListResponse guildList = 28;
+	GuildCreateResponse guildCreateRes = 29;
 
 	StatusNotify statusNotify = 100;
 
