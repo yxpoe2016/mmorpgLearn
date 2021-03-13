@@ -82,6 +82,7 @@ namespace GameServer.Services
                 var leader = SessionManager.Instance.GetSession(guild.Data.LeaderID);
                 if (leader != null)
                 {
+                    //抛给会长处理
                     leader.Session.Response.guildJoinReq = request;
                     leader.SendResponse();
                 }
@@ -106,6 +107,7 @@ namespace GameServer.Services
             var requester = SessionManager.Instance.GetSession(response.Apply.characterId);
             if (requester != null)
             {
+                Log.InfoFormat("OnGuildJoinResponse: GuildId:{0}  response.Apply.characterId:{1}", response.Apply.GuildId, response.Apply.characterId);
                 requester.Session.Character.Guild = guild;
                 requester.Session.Response.guildJoinRes = response;
                 requester.Session.Response.guildJoinRes.Errormsg = "加入公会成功";

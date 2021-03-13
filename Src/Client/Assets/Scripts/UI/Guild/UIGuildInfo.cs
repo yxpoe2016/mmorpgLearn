@@ -45,7 +45,8 @@ public class UIGuildInfo : MonoBehaviour {
             this.guildID.text = "ID: " + this.info.Id;
             this.leader.text = this.info.leaderName;
             this.notice.text = this.info.Notice;
-            this.memberNumber.text = string.Format("成员数量{1} / {2}", this.info.memberCount.ToString(), GameDefine.GuildMaxMemberCount.ToString());
+            this.memberNumber.text =
+                this.info.memberCount.ToString(); //string.Format("成员数量{1} / {2}", this.info.memberCount.ToString(), GameDefine.GuildMaxMemberCount.ToString());
         }
     }
 }

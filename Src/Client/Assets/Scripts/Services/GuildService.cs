@@ -105,10 +105,10 @@ public class GuildService : Singleton<GuildService>, IDisposable
     {
         if (message.Result == Result.Success)
         {
-            MessageBox.Show("加入公会成功", "公会");
+            MessageBox.Show(message.Apply.Name+"加入公会成功", "公会");
         }
         else
-            MessageBox.Show("加入公会失败", "公会");
+            MessageBox.Show(message.Apply.Name + "加入公会失败", "公会");
     }
 
     private void OnGuild(object sender, GuildResponse message)

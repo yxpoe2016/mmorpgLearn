@@ -156,7 +156,7 @@ class Time
         return dateTimeStart.Add(toNow);
     }
 
-    private static int GetTimestamp(DateTime time)
+    public static int GetTimestamp(DateTime time)
     {
         System.DateTime startTime = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));
         return (int) (time - startTime).TotalSeconds;

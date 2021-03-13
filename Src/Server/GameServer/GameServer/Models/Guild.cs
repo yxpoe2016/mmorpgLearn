@@ -119,7 +119,7 @@ namespace GameServer.Models
                 Notice = this.Data.Notice,
                 leaderId = this.Data.LeaderID,
                 leaderName = this.Data.LeaderName,
-                createTime = DateTime.Now.ToFileTime(),
+                createTime =  Time.GetTimestamp(this.Data.CreateTime),
                 memberCount = this.Members.Count
             };
             if (character != null)
