@@ -6,6 +6,7 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using Object = UnityEngine.Object;
 
 public class ListView : MonoBehaviour
 {
@@ -64,6 +65,16 @@ public class ListView : MonoBehaviour
         item.owner = this;
         this.items.Add(item);
     }
+//
+//    public void AddItem<T>(T item, Object itemPrefab, Transform listMain)
+//    {
+//        GameObject go = (GameObject)Instantiate(itemPrefab, listMain);
+//        UIGuildApplyItem ui = go.GetComponent<UIGuildApplyItem>();
+//        ui.SetItemInfo(item);
+//
+//        ((ListViewItem)item).owner = this;
+//        this.items.Add(ui);
+//    }
 
     public void RemoveAll()
     {

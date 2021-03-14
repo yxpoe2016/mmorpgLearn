@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class GuildManager : Singleton<GuildManager> {
     public NGuildInfo guildInfo;
+    internal NGuildMemberInfo myMemberInfo;
 
     public bool HasGuild
     {
@@ -16,6 +17,20 @@ public class GuildManager : Singleton<GuildManager> {
     public void Init(SkillBridge.Message.NGuildInfo guild)
     {
         this.guildInfo = guild;
+        if (guild == null)
+        {
+            myMemberInfo = null;
+            return;
+        }
+
+        foreach (var member in guild.Members)
+        {
+            if (member.characterId == User.Instance.CurrentCharacter.Id)
+            {
+                myMemberInfo = member;
+                break;
+            }
+        }
     }
 
     public void ShowGuild()

@@ -12,7 +12,7 @@ namespace GameServer.Models
         public int Id;
         public Character Leader;
         public List<Character> Members = new List<Character>();
-        public int timestamp;
+        public double timestamp;
 
         public Team(Character leader)
         {

@@ -24,7 +24,10 @@ public class GuildService : Singleton<GuildService>, IDisposable
         MessageDistributer.Instance.Subscribe<GuildLeaveResponse>(this.OnGuildLeave);
         MessageDistributer.Instance.Subscribe<GuildListResponse>(this.OnGuildList);
         MessageDistributer.Instance.Subscribe<GuildResponse>(this.OnGuild);
+        MessageDistributer.Instance.Subscribe<GuildAdminResponse>(this.OnGuildAdmin);
     }
+
+    
 
     public void Dispose()
     {
@@ -34,6 +37,7 @@ public class GuildService : Singleton<GuildService>, IDisposable
         MessageDistributer.Instance.Unsubscribe<GuildLeaveResponse>(this.OnGuildLeave);
         MessageDistributer.Instance.Unsubscribe<GuildListResponse>(this.OnGuildList);
         MessageDistributer.Instance.Unsubscribe<GuildResponse>(this.OnGuild);
+        MessageDistributer.Instance.Unsubscribe<GuildAdminResponse>(this.OnGuildAdmin);
     }
 
     public void SendGuildCreate(string guildName, string notice)
@@ -152,6 +156,33 @@ public class GuildService : Singleton<GuildService>, IDisposable
             this.OnGuildListResult(message.Guilds);
     }
 
+    public void SendGuildJoinApply(bool accpet, NGuildApplyInfo apply)
+    {
+        Debug.Log("SendGuildJoinApply");
+        NetMessage message = new NetMessage();
+        message.Request = new NetMessageRequest();
+        message.Request.guildJoinRes = new GuildJoinResponse();
+        message.Request.guildJoinRes.Apply = apply;
+        message.Request.guildJoinRes.Apply.Result = accpet ? ApplyResult.Accept : ApplyResult.Reject;
+        message.Request.guildJoinRes.Result = Result.Success;
+        NetClient.Instance.SendMessage(message);
+    }
 
-  
+    public void SendAdminCommand(GuildAdminCommand command, int characterId)
+    {
+        Debug.Log("SendAdminCommand");
+        NetMessage message = new NetMessage();
+        message.Request = new NetMessageRequest();
+        message.Request.guildAdmin = new GuildAdminRequest();
+        message.Request.guildAdmin.Command = command;
+        message.Request.guildAdmin.Target = characterId;
+        NetClient.Instance.SendMessage(message);
+    }
+
+    private void OnGuildAdmin(object sender, GuildAdminResponse message)
+    {
+        Debug.LogFormat("GuildAdmin : {0} {1}",message.Command,message.Result);
+        MessageBox.Show(string.Format("执行操作：{0} 结果{1} {2}", message.Command, message.Result, message.Errormsg));
+    }
+
 }
