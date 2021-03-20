@@ -49,6 +49,8 @@ public class PlayerInputController : MonoBehaviour {
     {
         if (character == null)
             return;
+        if (InputManager.Instance.IsInputMode)
+            return;
         if (Input.GetKey(KeyCode.W))
         {
             if (state != SkillBridge.Message.CharacterState.Move)

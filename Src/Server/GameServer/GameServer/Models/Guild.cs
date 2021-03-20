@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Common.Utils;
 using GameServer.Entities;
 using GameServer.Managers;
 using GameServer.Services;
@@ -47,7 +48,7 @@ namespace GameServer.Models
             DBService.Instance.Entities.TGuildApplies.Add(dbApply);
             this.Data.GuildApplies.Add(dbApply);
             DBService.Instance.Save();
-            this.timestamp = Time.timestamp;
+            this.timestamp = TimeUtil.timestamp;
             return true;
         }
         internal bool JoinAppove(NGuildApplyInfo apply)
@@ -63,7 +64,7 @@ namespace GameServer.Models
                 this.AddMember(apply.characterId, apply.Name, apply.Class, apply.Level, GuildTitle.None);
             }
             DBService.Instance.Save();
-            this.timestamp = Time.timestamp;
+            this.timestamp = TimeUtil.timestamp;
             return true;
         }
 
@@ -89,7 +90,7 @@ namespace GameServer.Models
                 TCharacter dbChar = DBService.Instance.Entities.Characters.SingleOrDefault(c => c.ID == characterId);
                 dbChar.GuildId = this.Id;
             }
-            timestamp = Time.timestamp;
+            timestamp = TimeUtil.timestamp;
         }
         internal void Leave(Character character)
         {
@@ -115,7 +116,7 @@ namespace GameServer.Models
                 Notice = this.Data.Notice,
                 leaderId = this.Data.LeaderID,
                 leaderName = this.Data.LeaderName,
-                createTime =  Time.GetTimestamp(this.Data.CreateTime),
+                createTime =  (long)TimeUtil.GetTimestamp(this.Data.CreateTime),
                 memberCount = this.Data.GuildMembers.Count
             };
             if (character != null)
@@ -228,7 +229,7 @@ namespace GameServer.Models
                     break;
             }
             DBService.Instance.Save();
-            timestamp = Time.timestamp;
+            timestamp = TimeUtil.timestamp;
         }
     }
 }

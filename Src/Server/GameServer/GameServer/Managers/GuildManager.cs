@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Common;
+using Common.Utils;
 using GameServer.Entities;
 using GameServer.Models;
 using GameServer.Services;
@@ -29,7 +30,7 @@ namespace GameServer.Managers
         {
             this.Guilds.Add(guild.Id, guild);
             this.GuildNames.Add(guild.Name);
-            guild.timestamp = Time.timestamp;
+            guild.timestamp = TimeUtil.timestamp;
         }
 
         internal bool CheackNameExisted(string guildName)

@@ -30,6 +30,7 @@ public class TabView : MonoBehaviour {
             for (int i = 0; i < tabButtons.Length; i++)
             {
                 tabButtons[i].Select(i == index);
+                if (tabPages.Length>0)
                     tabPages[i].SetActive(i == index);
             }
             if (OnTabSelect != null)

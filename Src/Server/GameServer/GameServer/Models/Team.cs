@@ -2,6 +2,7 @@
 
 using System.Collections.Generic;
 using Common;
+using Common.Utils;
 using GameServer.Entities;
 using SkillBridge.Message;
 
@@ -28,7 +29,7 @@ namespace GameServer.Models
             }
             this.Members.Add(member);
             member.Team = this;
-            timestamp = Time.timestamp;
+            timestamp = TimeUtil.timestamp;
         }
 
         public void Leave(Character member)
@@ -44,7 +45,7 @@ namespace GameServer.Models
             }
 
             member.Team = null;
-            timestamp = Time.timestamp;
+            timestamp = TimeUtil.timestamp;
         }
 
         public void PostProcess(NetMessageResponse message)

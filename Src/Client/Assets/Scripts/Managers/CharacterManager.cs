@@ -71,5 +71,12 @@ namespace Services
                 this.Characters.Remove(entityId);
             }
         }
+
+        public Character GetCharacter(int id)
+        {
+            Character c;
+            this.Characters.TryGetValue(id, out c);
+            return c;
+        }
     }
 }

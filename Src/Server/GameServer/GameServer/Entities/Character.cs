@@ -25,7 +25,7 @@ namespace GameServer.Entities
         public Team Team;
         public double TeamUpdateTS;
         public double GuildUpdateTS;
-
+        public Chat Chat;
         public long Glod
         {
             get
@@ -73,6 +73,7 @@ namespace GameServer.Entities
             this.FriendManager = new FriendManager(this);
             this.FriendManager.GetFriendInfos(this.Info.Friends);
             this.Guild = GuildManager.Instance.GetGuild(this.Data.GuildId);
+            this.Chat = new Chat(this);
         }
 
         public void PostProcess(NetMessageResponse message)
@@ -110,6 +111,8 @@ namespace GameServer.Entities
             {
                 this.StatusManager.PostProcess(message);
             }
+
+            this.Chat.PostProcess(message);
         }
 
         public NCharacterInfo GetBasicInfo()

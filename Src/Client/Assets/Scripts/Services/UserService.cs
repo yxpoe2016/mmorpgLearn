@@ -17,6 +17,8 @@ public class UserService : Singleton<UserService>, IDisposable
     private bool connected;
     private NetMessage pendingMessage;
 
+    private bool isQuitGame = false;
+
     public UserService()
     {
         NetClient.Instance.OnConnect += OnGameServerConnect;
@@ -47,17 +49,17 @@ public class UserService : Singleton<UserService>, IDisposable
     public void ConnectToServer()
     {
         Debug.Log("ConnectToServer() Start");
-        NetClient.Instance.Init("127.0.0.1",8000);
+        NetClient.Instance.Init("127.0.0.1", 8000);
         NetClient.Instance.Connect();
     }
 
     void OnGameServerConnect(int result, string reason)
     {
-        Log.InfoFormat("LoadingMessager::OnGameServerConnect :{0} reason:{1}",result,reason);
+        Log.InfoFormat("LoadingMessager::OnGameServerConnect :{0} reason:{1}", result, reason);
         if (NetClient.Instance.Connected)
         {
             this.connected = true;
-            if (this.pendingMessage!=null)
+            if (this.pendingMessage != null)
             {
                 NetClient.Instance.SendMessage(this.pendingMessage);
                 this.pendingMessage = null;
@@ -65,9 +67,10 @@ public class UserService : Singleton<UserService>, IDisposable
         }
         else
         {
-            if (!this.DisconnectNotify(result,reason))
+            if (!this.DisconnectNotify(result, reason))
             {
-                MessageBox.Show(string.Format("网络错误，无法连接到服务器！\n RESULT:{0} ERROR:{1}", result, reason), "错误", MessageBoxType.Error);
+                MessageBox.Show(string.Format("网络错误，无法连接到服务器！\n RESULT:{0} ERROR:{1}", result, reason), "错误",
+                    MessageBoxType.Error);
             }
         }
     }
@@ -80,17 +83,19 @@ public class UserService : Singleton<UserService>, IDisposable
 
     bool DisconnectNotify(int result, string reason)
     {
-        if (this.pendingMessage!=null)
+        if (this.pendingMessage != null)
         {
-            if (this.pendingMessage.Request.userRegister!=null)
+            if (this.pendingMessage.Request.userRegister != null)
             {
-                if (this.OnRegister!= null)
+                if (this.OnRegister != null)
                 {
                     this.OnRegister(Result.Failed, string.Format("服务器断开!\n RESULT: {0} ERROR:{1}", result, reason));
                 }
             }
+
             return true;
         }
+
         return false;
     }
 
@@ -119,7 +124,7 @@ public class UserService : Singleton<UserService>, IDisposable
     private void OnUserRegister(object sender, UserRegisterResponse response)
     {
         Debug.LogFormat("OnUserRegister:{0} [{1}]", response.Result, response.Errormsg);
-        if (this.OnRegister!=null)
+        if (this.OnRegister != null)
         {
             this.OnRegister(response.Result, response.Errormsg);
         }
@@ -154,6 +159,7 @@ public class UserService : Singleton<UserService>, IDisposable
         {
             User.Instance.SetupUserInfo(response.Userinfo);
         }
+
         if (this.OnLogin != null)
         {
             this.OnLogin(response.Result, response.Errormsg);
@@ -192,7 +198,7 @@ public class UserService : Singleton<UserService>, IDisposable
             User.Instance.Info.Player.Characters.AddRange(response.Characters);
         }
 
-        if (this.OnCharacterCreate !=null)
+        if (this.OnCharacterCreate != null)
         {
             OnCharacterCreate(response.Result, response.Errormsg);
         }
@@ -200,6 +206,7 @@ public class UserService : Singleton<UserService>, IDisposable
 
     public void SendGameEnter(int characterIdx)
     {
+        ChatManager.Instance.Init();
         Debug.LogFormat("characterIdx:{0}", characterIdx);
         NetMessage message = new NetMessage();
         message.Request = new NetMessageRequest();
@@ -215,7 +222,7 @@ public class UserService : Singleton<UserService>, IDisposable
 
         if (response.Result == Result.Success)
         {
-            if (response.Character!=null)
+            if (response.Character != null)
             {
                 User.Instance.CurrentCharacter = response.Character;
                 ItemManager.Instance.Init(response.Character.Items);
@@ -229,8 +236,9 @@ public class UserService : Singleton<UserService>, IDisposable
     }
 
 
-    public void SendGameLeave()
+    public void SendGameLeave(bool isQuitGame = false)
     {
+        this.isQuitGame = isQuitGame;
         Debug.Log("UserGameLeaveRequest");
         NetMessage message = new NetMessage();
         message.Request = new NetMessageRequest();
@@ -243,6 +251,14 @@ public class UserService : Singleton<UserService>, IDisposable
         MapService.Instance.CurrentMapId = 0;
         User.Instance.CurrentCharacter = null;
         Debug.LogFormat("OnGameLeave:{0} [{1}]", response.Result, response.Errormsg);
+        if (this.isQuitGame)
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
+        }
     }
-
 }
+
