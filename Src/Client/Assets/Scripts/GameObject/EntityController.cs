@@ -28,6 +28,10 @@ public class EntityController : MonoBehaviour,IEntityNotify
 
     public bool isPlayer = false;
 
+    public RideController rideController;
+    private int CurrentRide = 0;
+    public Transform rideBone;
+
     // Use this for initialization
     void Start () {
         if (entity != null)
@@ -76,7 +80,7 @@ public class EntityController : MonoBehaviour,IEntityNotify
         }
     }
 
-    public void OnEntityEvent(EntityEvent entityEvent)
+    public void OnEntityEvent(EntityEvent entityEvent,int param)
     {
         switch(entityEvent)
         {
@@ -93,7 +97,13 @@ public class EntityController : MonoBehaviour,IEntityNotify
             case EntityEvent.Jump:
                 anim.SetTrigger("Jump");
                 break;
+            case EntityEvent.Ride:
+                this.Ride(param);
+                break;
         }
+
+        if (this.rideController != null)
+            this.rideController.OnEntityEvent(entityEvent, param);
     }
 
     public void OnEntityRemoved()
@@ -108,5 +118,39 @@ public class EntityController : MonoBehaviour,IEntityNotify
         Debug.LogFormat("OnEntityChanged: ID {0} POS:{1}",entity.entityId,entity.position);
     }
 
+    public void Ride(int rideId)
+    {
+        if(CurrentRide == rideId)
+            return;
+        CurrentRide = rideId;
+        if (rideId > 0)
+        {
+            this.rideController = GameObjectManager.Instance.LoadRide(rideId, this.transform);
+        }
+        else
+        {
+           Destroy(this.rideController.gameObject);
+           this.rideController = null;
+        }
 
+        if (this.rideController == null)
+        {
+            this.anim.transform.localPosition = Vector3.zero;
+            this.anim.SetLayerWeight(1,0);
+        }
+        else
+        {
+            this.rideController.SetRider(this);
+            this.anim.SetLayerWeight(1,1);
+        }
+    }
+
+    /// <summary>
+    /// 绑定点
+    /// </summary>
+    /// <param name="position"></param>
+    public void SetRidePosition(Vector3 position)
+    {
+        this.anim.transform.position = position + (this.anim.transform.position - this.rideBone.position);
+    }
 }

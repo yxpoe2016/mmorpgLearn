@@ -27,5 +27,13 @@
     "Description": "装备npc",
     "Type": "Functional",
     "Function": "InvokeShop"
+  },
+  "5": {
+    "ID": 5,
+    "Name": "薇薇安",
+    "Param": 3,
+    "Description": "坐骑npc",
+    "Type": "Functional",
+    "Function": "InvokeShop"
   }
 }

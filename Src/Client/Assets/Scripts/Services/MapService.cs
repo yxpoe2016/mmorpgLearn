@@ -86,7 +86,7 @@ public class MapService : Singleton<MapService>, IDisposable
         }
     }
 
-    public void SendMapEntitySync(EntityEvent entityEvent,NEntity entity)
+    public void SendMapEntitySync(EntityEvent entityEvent,NEntity entity,int param)
     {
         Debug.LogFormat("MapEntityRequest :ID:{0} POS:{1} DIR:{2} SPEED:{3} entityEvent {4}", entity.Id, entity.Position.String(), entity.Direction.String(), entity.Speed, entityEvent);
         NetMessage message = new NetMessage();
@@ -96,7 +96,8 @@ public class MapService : Singleton<MapService>, IDisposable
         {
             Id = entity.Id,
             Event = entityEvent,
-            Entity = entity
+            Entity = entity,
+            Param = param
         };
        
         NetClient.Instance.SendMessage(message);

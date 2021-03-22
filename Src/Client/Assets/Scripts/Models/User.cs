@@ -10,7 +10,7 @@ using UnityEngine;
 public class User : Singleton<User>
 {
     private SkillBridge.Message.NUserInfo userInfo;
-
+    public int CurrentRide = 0;
 
     public SkillBridge.Message.NUserInfo Info
     {
@@ -26,12 +26,26 @@ public class User : Singleton<User>
 
     public MapDefine CurrentMapData { get; set; }
 
-    public GameObject CurrentCharacterObject { get; set; }
+    public PlayerInputController CurrentCharacterObject { get; set; }
 
     public NTeamInfo TeamInfo { get; set; }
 
     internal void AddGold(int value)
     {
         this.CurrentCharacter.Gold += value;
+    }
+
+    public void Ride(int id)
+    {
+        if (CurrentRide != id)
+        {
+            CurrentRide = id;
+            CurrentCharacterObject.SendEntityEvent(EntityEvent.Ride, CurrentRide);
+        }
+        else
+        {
+            CurrentRide = 0;
+            CurrentCharacterObject.SendEntityEvent(EntityEvent.Ride, CurrentRide);
+        }
     }
 }

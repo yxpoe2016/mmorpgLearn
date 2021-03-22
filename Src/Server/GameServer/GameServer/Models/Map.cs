@@ -112,6 +112,10 @@ namespace GameServer.Models
                     kv.Value.character.Position = entitySync.Entity.Position;
                     kv.Value.character.Direction = entitySync.Entity.Direction;
                     kv.Value.character.Speed = entitySync.Entity.Speed;
+                    if (entitySync.Event == EntityEvent.Ride)
+                    {
+                        kv.Value.character.Ride = entitySync.Param;
+                    }
                 }
                 else
                 {
