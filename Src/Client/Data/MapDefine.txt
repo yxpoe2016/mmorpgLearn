@@ -6,6 +6,7 @@
     "SubType": "Normal",
     "PKMode": false,
     "MiniMap": "buluzheng",
+    "Music": "bgm-town",
     "Resource": "MainCity"
   },
   "2": {
@@ -15,6 +16,7 @@
     "SubType": "Normal",
     "PKMode": false,
     "MiniMap": "luorisenl",
+    "Music": "bgm-map01",
     "Resource": "Map01"
   },
   "3": {
@@ -24,6 +26,7 @@
     "SubType": "Normal",
     "PKMode": false,
     "MiniMap": "luorisenl",
+    "Music": "bgm-map02",
     "Resource": "Map02"
   },
   "4": {
@@ -33,6 +36,7 @@
     "SubType": "Normal",
     "PKMode": false,
     "MiniMap": "luoriyuhui",
+    "Music": "bgm-map03",
     "Resource": "Map03"
   }
 }

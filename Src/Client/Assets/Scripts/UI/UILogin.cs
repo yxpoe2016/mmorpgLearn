@@ -39,6 +39,7 @@ public class UILogin : MonoBehaviour {
             return;
         }
 
+        SoundManager.Instance.PlaySound(SoundDefine.SFX_UI_Click);
         UserService.Instance.SendLogin(username.text, password.text);
     }
 

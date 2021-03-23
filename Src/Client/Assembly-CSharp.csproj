@@ -56,6 +56,7 @@
      <Compile Include="Assets\FX\Scripts\DelayActiveChild.cs" />
      <Compile Include="Assets\FX\Scripts\uv_l.cs" />
      <Compile Include="Assets\Scripts\Assets\Resloader.cs" />
+     <Compile Include="Assets\Scripts\Config.cs" />
      <Compile Include="Assets\Scripts\Entities\Character.cs" />
      <Compile Include="Assets\Scripts\Entities\Entity.cs" />
      <Compile Include="Assets\Scripts\GameObject\EntityController.cs" />
@@ -84,6 +85,7 @@
      <Compile Include="Assets\Scripts\Managers\NpcManager.cs" />
      <Compile Include="Assets\Scripts\Managers\QuestManager.cs" />
      <Compile Include="Assets\Scripts\Managers\ShopManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\SoundManager.cs" />
      <Compile Include="Assets\Scripts\Managers\TeamManager.cs" />
      <Compile Include="Assets\Scripts\Managers\TestManage.cs" />
      <Compile Include="Assets\Scripts\Models\BagItem.cs" />
@@ -101,6 +103,7 @@
      <Compile Include="Assets\Scripts\Services\StatusService.cs" />
      <Compile Include="Assets\Scripts\Services\TeamService.cs" />
      <Compile Include="Assets\Scripts\Services\UserService.cs" />
+     <Compile Include="Assets\Scripts\SoundDefine.cs" />
      <Compile Include="Assets\Scripts\UI\Bag\UIBag.cs" />
      <Compile Include="Assets\Scripts\UI\CharEquip\UICharEquip.cs" />
      <Compile Include="Assets\Scripts\UI\CharEquip\UIEquipItem.cs" />
@@ -147,6 +150,7 @@
      <Compile Include="Assets\Scripts\UI\UIPopCharMenu.cs" />
      <Compile Include="Assets\Scripts\UI\UIRegister.cs" />
      <Compile Include="Assets\Scripts\UI\UISetting.cs" />
+     <Compile Include="Assets\Scripts\UI\UISystemConfig.cs" />
      <Compile Include="Assets\Scripts\UI\UITest.cs" />
      <Compile Include="Assets\Scripts\UI\UIWindow.cs" />
      <Compile Include="Assets\Scripts\UI\UIWorldElement.cs" />
