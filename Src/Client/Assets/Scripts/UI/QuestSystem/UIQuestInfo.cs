@@ -19,6 +19,9 @@ public class UIQuestInfo : MonoBehaviour
 
     public Text rewarExp;
 
+    public Button navButton;
+
+    private int npc = 0;
 	// Use this for initialization
 	void Start () {
 		
@@ -42,9 +45,25 @@ public class UIQuestInfo : MonoBehaviour
         if (this.rewarExp != null)
             this.rewarExp.text = quest.Define.RewardExp.ToString();
 
+        if (quest.Info == null)
+        {
+            this.npc = quest.Define.AcceptNPC;
+        }
+        else if (quest.Info.Status == QuestStatus.Complated)
+        {
+            this.npc = quest.Define.SubmitNPC;
+        }
+        this.navButton.gameObject.SetActive(this.npc>0);
         // foreach (var fitter in this.GetComponentsInChildren<ContentSizeFitter>())
         // {
         //     fitter.SetLayoutVertical();
         // }
+    }
+
+    public void onClickNav()
+    {
+        Vector3 pos = NpcManager.Instance.GetNpcPosition(this.npc);
+        User.Instance.CurrentCharacterObject.StarNav(pos);
+        UIManager.Instance.Close<UIQuestSystem>();
     }
 }

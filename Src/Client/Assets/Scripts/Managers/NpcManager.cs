@@ -11,7 +11,7 @@ public class NpcManager : Singleton<NpcManager>
     public delegate bool NpcActionHandler(NpcDefine npc);
 
     Dictionary<NpcFunction,NpcActionHandler> eventMap = new Dictionary<NpcFunction, NpcActionHandler>();
-
+    Dictionary<int,Vector3> npcPosition = new Dictionary<int, Vector3>();
     public void RegisterNpcEvent(NpcFunction function, NpcActionHandler action)
     {
         if (!eventMap.ContainsKey(function))
@@ -67,6 +67,15 @@ public class NpcManager : Singleton<NpcManager>
             return false;
 
         return QuestManager.Instance.OpenNpcQuest(npc.ID);
+    }
+
+    public void UpdateNpcPosition(int npc, Vector3 pos)
+    {
+        this.npcPosition[npc] = pos;
+    }
+    internal Vector3 GetNpcPosition(int npc)
+    {
+        return this.npcPosition[npc];
     }
 
     public NpcDefine GetNpcDefine(int id)

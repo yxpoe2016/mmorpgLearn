@@ -113,7 +113,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: f98b9f49111a5b744a032a2cef661270, type: 2}
 --- !u!1001 &262985
 Prefab:
   m_ObjectHideFlags: 0
@@ -37758,6 +37758,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ee930da01bde62745a2f4d64c217d25f, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee930da01bde62745a2f4d64c217d25f, type: 2}
   m_IsPrefabAsset: 0
@@ -44468,8 +44472,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1381770090}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 40.77762, y: -42.5, z: 39.8}
-  m_LocalScale: {x: 84.20625, y: 84.20628, z: 0.779688}
+  m_LocalPosition: {x: 40.77762, y: 3.7, z: 39.8}
+  m_LocalScale: {x: 84.20625, y: 84.20628, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
@@ -63441,12 +63445,12 @@ Prefab:
     - target: {fileID: 224156135212917656, guid: efd261a76009c514589380ad6f09a094,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 224156135212917656, guid: efd261a76009c514589380ad6f09a094,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 25.16854
+      value: 25.09804
       objectReference: {fileID: 0}
     - target: {fileID: 114752589720631410, guid: efd261a76009c514589380ad6f09a094,
         type: 2}
@@ -63496,7 +63500,7 @@ Prefab:
     - target: {fileID: 224156135212917656, guid: efd261a76009c514589380ad6f09a094,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -109.1
+      value: -109.10001
       objectReference: {fileID: 0}
     - target: {fileID: 114655529163753170, guid: efd261a76009c514589380ad6f09a094,
         type: 2}
